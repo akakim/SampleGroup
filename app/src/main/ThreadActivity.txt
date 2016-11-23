@@ -1,0 +1,98 @@
+﻿package com.superdroid.test.Thread;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+public class ThreadActivity extends Activity
+{
+    int      mCount = 0;
+    TextView mCountTextView = null;
+   
+    // 메시지큐에 메시지를 추가하기 위한 핸들러를 생성한다.
+    // ========================================================================
+    Handler  mHandler = new Handler();
+    // ========================================================================
+    
+    @Override
+    protected void onCreate( Bundle savedInstanceState )
+    {
+        super.onCreate( savedInstanceState );
+        
+        // 1. 생명주기 onCreate 함수가 호출되었을 때 로그를 출력해 둔다.
+        // ====================================================================
+        Log.d("superdroid", "onCreate()");
+        // ====================================================================
+        
+        // 2. 레이아웃을 액티비티에 반영 및 텍스트뷰 객체를 얻어온다.
+        // ====================================================================
+        setContentView( R.layout.activity_thread );
+        mCountTextView = ( TextView )findViewById( R.id.count_textview );
+        // ====================================================================
+
+        // 3. 10초 동안 1씩 카운트하는 스레드 생성 및 시작
+        // ====================================================================
+        Thread countThread = new Thread("Count Thread")
+        {
+            public void run()
+            {
+                for ( int i = 0 ; i < 10 ; i ++ )
+                {
+                    mCount ++;
+                    
+                    // 1) 실행 코드가 담긴 Runnable 객체를 하나 생성한다.
+                    // --------------------------------------------------------
+                    Runnable callback = new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+                            // 현재까지 카운트 된 수를 텍스트뷰에 출력한다.
+                            // ------------------------------------------------
+                            Log.i("superdroid", "Count : " + mCount );
+                            mCountTextView.setText( "Count : " + mCount );
+                            // ------------------------------------------------
+                        }
+                    };
+                    // --------------------------------------------------------
+                    
+                    // 2) 메시지 큐에 담을 메시지 하나를 생성한다. 생성시
+                    //    Runnable 객체를 생성자로 전달한다.
+                    // --------------------------------------------------------
+                    Message message = Message.obtain( mHandler, callback );
+                    // --------------------------------------------------------
+
+                    // 3) 핸들러를 통해 메시지를 메시지 큐에 보낸다.
+                    // --------------------------------------------------------
+                    mHandler.sendMessage( message );
+                    // --------------------------------------------------------
+                    
+                    try
+                    {
+                        Thread.sleep( 1000 );
+                    }
+                    catch ( InterruptedException e )
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        
+        countThread.start();
+        // ====================================================================
+    }
+    
+    public void onClick ( View v )
+    {
+        // 현재까지 카운트 된 수를 텍스트뷰에 출력한다.
+        // ====================================================================
+        mCountTextView.setText( "Count : " + mCount );
+        // ====================================================================
+    }
+}
+

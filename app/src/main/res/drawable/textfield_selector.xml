@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- window 상태가 focusing false일때 state enable은 true 일때  -->
+    <item android:state_window_focused="false" android:state_enabled="true"
+        android:drawable="@drawable/table_textfield_default"/>
+    <!-- state_enable은 false인경우 -->
+    <item android:state_window_focused="false" android:state_enabled="false"
+        android:drawable="@drawable/table_textfield_default"/>
+
+    <item android:state_pressed="true" android:drawable="@drawable/table_textfield_default_pressed" />
+    <item android:state_enabled="true" android:state_focused="true" android:drawable="@drawable/table_textfield_focused"/>
+    <item android:state_enabled="true" android:drawable="@drawable/table_textfield_default"/>
+    <item android:state_focused="true" android:drawable="@drawable/table_textfield_focused" />
+    <item android:drawable="@drawable/table_textfield_default"  />
+
+</selector>

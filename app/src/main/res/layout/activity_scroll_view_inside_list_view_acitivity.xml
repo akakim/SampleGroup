@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_programatically_setting_layout_height"
+    android:id="@+id/activity_scroll_view_inside_list_view_acitivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sslab.samplegroupapplication.samples.ProgramaticallySettingLayoutHeightActivity"
-    android:orientation="vertical">
-
+    tools:context="com.example.sslab.samplegroupapplication.samples.ScrollViewInsideListViewAcitivity">
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:id="@+id/programaticallyUpdatedListView" />
-
+            android:layout_height="match_parent"
+            android:id="@+id/insideListView">
+        </ListView>
 </LinearLayout>

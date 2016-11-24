@@ -15,12 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ThreadMessageQueueSample" />
-        <activity android:name=".Sample02Activity" />
-        <activity android:name=".CustomTextViewActivity" />
-        <activity android:name=".GridViewSample" />
-        <activity android:name=".MultiLineTextListViewActivity" />
-        <activity android:name=".ProgramaticallySettingLayoutHeightActivity"></activity>
+        <activity android:name=".samples.ThreadMessageQueueSample" />
+        <activity android:name=".samples.Sample02Activity" />
+        <activity android:name=".samples.CustomTextViewActivity" />
+        <activity android:name=".samples.GridViewSample" />
+        <activity android:name=".samples.MultiLineTextListViewActivity" />
+        <activity android:name=".samples.ProgramaticallySettingLayoutHeightActivity" />
+        <activity android:name=".samples.ScrollViewInsideListViewAcitivity" />
+        <activity android:name=".samples.ExpandableListViewSampleActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication;
+package com.example.sslab.samplegroupapplication.data;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;

@@ -11,6 +11,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.sslab.samplegroupapplication.adapter.CommonTextView4ItemAdapter;
+import com.example.sslab.samplegroupapplication.data.activityList;
+import com.example.sslab.samplegroupapplication.samples.CustomTextViewActivity;
+import com.example.sslab.samplegroupapplication.samples.ExpandableListViewSampleActivity;
+import com.example.sslab.samplegroupapplication.samples.GridViewSample;
+import com.example.sslab.samplegroupapplication.samples.ProgramaticallySettingLayoutHeightActivity;
+import com.example.sslab.samplegroupapplication.samples.Sample02Activity;
+import com.example.sslab.samplegroupapplication.samples.ScrollViewInsideListViewAcitivity;
+import com.example.sslab.samplegroupapplication.samples.ThreadMessageQueueSample;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         items.add(new activityList(CustomTextViewActivity.class.getSimpleName(),CustomTextViewActivity.class));
         items.add(new activityList(GridViewSample.class.getSimpleName(),GridViewSample.class));
         items.add(new activityList(ProgramaticallySettingLayoutHeightActivity.class.getSimpleName(),ProgramaticallySettingLayoutHeightActivity.class));
-
+        items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
+        items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));
         adapter = new ListViewAdapter(this, android.R.layout.simple_list_item_1, items);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

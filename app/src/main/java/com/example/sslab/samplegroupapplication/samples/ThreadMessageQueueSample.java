@@ -1,10 +1,12 @@
-package com.example.sslab.samplegroupapplication;
+package com.example.sslab.samplegroupapplication.samples;
 
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.example.sslab.samplegroupapplication.R;
 
 public class ThreadMessageQueueSample extends AppCompatActivity {
     private String TAG = ThreadMessageQueueSample.class.getSimpleName();

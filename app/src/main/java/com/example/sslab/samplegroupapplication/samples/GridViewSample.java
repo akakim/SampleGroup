@@ -1,9 +1,10 @@
-package com.example.sslab.samplegroupapplication;
+package com.example.sslab.samplegroupapplication.samples;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.GridView;
 
+import com.example.sslab.samplegroupapplication.R;
 import com.example.sslab.samplegroupapplication.adapter.HistoryDetailAdapter;
 import com.example.sslab.samplegroupapplication.data.HistoryDetailItem;
 

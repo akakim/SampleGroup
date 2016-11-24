@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication;
+package com.example.sslab.samplegroupapplication.widget;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;

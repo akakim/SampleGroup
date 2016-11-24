@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication;
+package com.example.sslab.samplegroupapplication.samples;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import com.example.sslab.samplegroupapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;

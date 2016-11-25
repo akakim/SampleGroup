@@ -73,12 +73,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void startActivity(Intent intent, Bundle options) {
         super.startActivity(intent, options);
-        String option = options.getString("option");
-        switch (option){
-            case "error_conflict":
-                break;
-        }
     }
+
 
     private class ListViewAdapter extends ArrayAdapter<activityList> {
 

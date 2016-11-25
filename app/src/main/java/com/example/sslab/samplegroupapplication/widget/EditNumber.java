@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.sslab.samplegroupapplication.common.CommonUtil;
+import com.example.sslab.samplegroupapplication.util.CommonUtil;
 import com.example.sslab.samplegroupapplication.R;
 
 /**

@@ -2,12 +2,10 @@ package com.example.sslab.samplegroupapplication.samples;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.sslab.samplegroupapplication.R;
-import com.example.sslab.samplegroupapplication.common.CommonUIUpdateUtil;
 
 import java.util.ArrayList;
 

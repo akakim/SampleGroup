@@ -2,6 +2,8 @@ package com.example.sslab.samplegroupapplication.samples;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
@@ -20,7 +22,13 @@ public class ExpandableListViewSampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expandable_list_view_sample);
 
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View headerView = inflater.inflate(R.layout.headerview_sample,null);
+        View footerView = inflater.inflate(R.layout.footerview_sample,null);
+
         expandableList = (ExpandableListView)findViewById(R.id.expandableList);
+        expandableList.addHeaderView(headerView);
+        expandableList.addFooterView(footerView);
         adapter = new ExpandableAdapter(this,createData());
         expandableList.setAdapter(adapter);
     }

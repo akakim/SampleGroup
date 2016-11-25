@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication.common;
+package com.example.sslab.samplegroupapplication.util;
 
 import android.util.Log;
 

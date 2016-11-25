@@ -22,7 +22,17 @@
         <activity android:name=".samples.MultiLineTextListViewActivity" />
         <activity android:name=".samples.ProgramaticallySettingLayoutHeightActivity" />
         <activity android:name=".samples.ScrollViewInsideListViewAcitivity" />
-        <activity android:name=".samples.ExpandableListViewSampleActivity"></activity>
+
+        <receiver
+            android:name=".receiver.ErrorReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".receiver.DataRemovedReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".samples.DisplayBitmapActivity"></activity>
     </application>
 
 </manifest>

@@ -20,6 +20,7 @@ import com.example.sslab.samplegroupapplication.samples.ProgramaticallySettingLa
 import com.example.sslab.samplegroupapplication.samples.Sample02Activity;
 import com.example.sslab.samplegroupapplication.samples.ScrollViewInsideListViewAcitivity;
 import com.example.sslab.samplegroupapplication.samples.ThreadMessageQueueSample;
+import com.example.sslab.samplegroupapplication.util.UncaughtExceptionHandlerApplication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +30,19 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<activityList> items = new ArrayList<>();
     ListViewAdapter adapter;
     ListView listView;
+
+    private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         listView = (ListView) findViewById(R.id.list);
+
+        mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
+
+        Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(mUncaughtExceptionHandler,this));
+
 
         items.add(new activityList(ThreadMessageQueueSample.class.getSimpleName(), ThreadMessageQueueSample.class));
         items.add(new activityList(Sample02Activity.class.getSimpleName(), Sample02Activity.class));
@@ -54,6 +62,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+
+    }
+
+    @Override
+    public void startActivity(Intent intent, Bundle options) {
+        super.startActivity(intent, options);
+        String option = options.getString("option");
+        switch (option){
+            case "error_conflict":
+                break;
+        }
     }
 
     private class ListViewAdapter extends ArrayAdapter<activityList> {

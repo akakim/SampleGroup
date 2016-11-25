@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication.common;
+package com.example.sslab.samplegroupapplication.util;
 
 import android.view.View;
 import android.widget.LinearLayout;

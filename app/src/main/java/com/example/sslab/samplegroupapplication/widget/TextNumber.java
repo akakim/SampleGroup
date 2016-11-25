@@ -5,7 +5,7 @@ import android.text.SpannableStringBuilder;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.example.sslab.samplegroupapplication.common.CommonUtil;
+import com.example.sslab.samplegroupapplication.util.CommonUtil;
 
 /**
  * Created by SSLAB on 2016-11-16.

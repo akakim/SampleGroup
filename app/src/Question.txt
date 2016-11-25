@@ -1,0 +1,6 @@
+1 . HashMap은 <key,value>로 구성이되어있고 다른 키가 같은 value를 가리킬 수 있다.
+JDK 1.7까지 chaining에 대해선, LinkedList로 처리했다.
+JDK 1.8에선 chaingng이 Tree로 바뀌게 되었다. 잡설은 여기까지..
+http://d2.naver.com/helloworld/831311
+그렇다면 hash값들을 value에 저장하게 될텐데,
+다른 중복성은 없을까??

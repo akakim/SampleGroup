@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridLayout;
 
 import com.example.sslab.samplegroupapplication.R;
 
@@ -33,6 +34,7 @@ public class ImageGridLayoutFragment extends Fragment implements AdapterView.OnI
 
     private OnFragmentInteractionListener mListener;
 
+    private GridLayout gridLayout;
     public ImageGridLayoutFragment() {
         // Required empty public constructor
     }
@@ -68,7 +70,13 @@ public class ImageGridLayoutFragment extends Fragment implements AdapterView.OnI
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+
+        final View v = inflater.inflate(R.layout.fragment_blank, container, false);
+        gridLayout = (GridLayout)v.findViewById(R.id.gridLayout);
+        gridLayout.setDrawingCacheEnabled(true);
+        gridLayout.canScrollVertically(View.SCROLL_AXIS_VERTICAL);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

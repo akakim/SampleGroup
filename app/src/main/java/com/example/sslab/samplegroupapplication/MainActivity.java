@@ -13,12 +13,14 @@ import android.widget.TextView;
 
 import com.example.sslab.samplegroupapplication.adapter.CommonTextView4ItemAdapter;
 import com.example.sslab.samplegroupapplication.data.activityList;
+import com.example.sslab.samplegroupapplication.samples.BitmapSamplesActivity;
 import com.example.sslab.samplegroupapplication.samples.CustomTextViewActivity;
 import com.example.sslab.samplegroupapplication.samples.ExpandableListViewSampleActivity;
 import com.example.sslab.samplegroupapplication.samples.GridViewSample;
 import com.example.sslab.samplegroupapplication.samples.ProgramaticallySettingLayoutHeightActivity;
 import com.example.sslab.samplegroupapplication.samples.Sample02Activity;
 import com.example.sslab.samplegroupapplication.samples.ScrollViewInsideListViewAcitivity;
+import com.example.sslab.samplegroupapplication.samples.SwipeRefreshBottomLayoutActivity;
 import com.example.sslab.samplegroupapplication.samples.ThreadMessageQueueSample;
 import com.example.sslab.samplegroupapplication.util.UncaughtExceptionHandlerApplication;
 
@@ -51,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
         items.add(new activityList(ProgramaticallySettingLayoutHeightActivity.class.getSimpleName(),ProgramaticallySettingLayoutHeightActivity.class));
         items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
         items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));
+        items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));
+//        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),BitmapSamplesActivity.class));
         adapter = new ListViewAdapter(this, android.R.layout.simple_list_item_1, items);
+
+
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

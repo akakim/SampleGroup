@@ -3,4 +3,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="itemValues">
+        <item>Nexus5</item>
+        <item>Nexus6</item>
+        <item>Nexus7</item>
+        <item>Nexus8</item>
+        <item>Nexus9</item>
+    </string-array>
+
 </resources>

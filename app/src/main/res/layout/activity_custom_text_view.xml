@@ -34,11 +34,12 @@
         android:text="10000"
         android:layout_columnSpan="2"
         />
+
+
     <com.example.sslab.samplegroupapplication.widget.EditNumber
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:text="0"
         android:layout_columnSpan="2"
-        android:foregroundGravity="right"
-        />
+        android:gravity="right"
+        android:id="@+id/editNumber" />
 </GridLayout>

@@ -9,4 +9,47 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sslab.samplegroupapplication.samples.Sample02Activity">
 
+
+    <Spinner android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_selector"
+        android:id="@+id/typeSpinner"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:minHeight="45dp"
+        android:id="@+id/edText"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/typeSpinner"
+        android:background="@drawable/textfield_selector"/>
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addButton1"
+        android:layout_below="@id/typeSpinner"
+        android:text="addListView 1"
+        />
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addButton2"
+        android:layout_below="@id/addButton1"
+        android:text="addListView 2"
+        />
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addButton3"
+        android:layout_below="@id/addButton2"
+        android:text="addListView 3"
+        />
+
+    <ListView  android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listViewSample"
+        android:layout_below="@id/addButton3"/>
+
 </RelativeLayout>

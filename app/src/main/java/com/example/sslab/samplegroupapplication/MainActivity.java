@@ -2,14 +2,23 @@ package com.example.sslab.samplegroupapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.adapter.CommonTextView4ItemAdapter;
 import com.example.sslab.samplegroupapplication.data.activityList;
@@ -30,9 +39,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<activityList> items = new ArrayList<>();
+    ArrayList<activityList> filteredItems = new ArrayList<>();
     ListViewAdapter adapter;
     ListView listView;
-
+    EditText searchEditText;
     private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
 
     @Override
@@ -40,7 +50,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.list);
+        searchEditText = (EditText) findViewById(R.id.searchEditText);
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                MainActivity.this.adapter.getFilter().filter(charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
 
         Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(mUncaughtExceptionHandler,this));
@@ -54,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
         items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
         items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));
         items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));
+        filteredItems.addAll(items);
 //        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),BitmapSamplesActivity.class));
-        adapter = new ListViewAdapter(this, android.R.layout.simple_list_item_1, items);
+        adapter = new ListViewAdapter(this, android.R.layout.simple_list_item_1, filteredItems);
 
 
         listView.setAdapter(adapter);
@@ -82,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private class ListViewAdapter extends ArrayAdapter<activityList> {
+    private class ListViewAdapter extends ArrayAdapter<activityList> implements Filterable{
 
         public ListViewAdapter(Context context, int resource, List<activityList> objects) {
             super(context, resource, objects);
@@ -97,5 +124,51 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(item.getActivityName());
             return v;
         }
+
+        @NonNull
+        @Override
+        public Filter getFilter() {
+            Filter filter = new Filter() {
+
+
+                @Override
+                protected FilterResults performFiltering(CharSequence charSequence) {
+                    FilterResults results = new FilterResults();
+                    ArrayList<activityList> FilteredArrayNames = new ArrayList<activityList>();
+
+
+                    charSequence = charSequence.toString().toLowerCase();
+
+                    for (int i = 0; i < items.size(); i++) {
+                        activityList item = items.get(i);
+                        if (item.getActivityName().toLowerCase().startsWith(charSequence.toString()))  {
+                            FilteredArrayNames.add(item);
+                        }
+                    }
+
+                    results.count = FilteredArrayNames.size();
+                    results.values = FilteredArrayNames;
+                    Log.d("VALUES", results.values.toString());
+
+
+                    return results;
+                }
+
+                @Override
+                protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                    filteredItems = (ArrayList<activityList>) filterResults.values;
+
+                    listView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            listView.invalidate();
+                            adapter.notifyDataSetChanged();
+                        }
+                    });
+                }
+            };
+            return filter;
+        }
+
     }
 }

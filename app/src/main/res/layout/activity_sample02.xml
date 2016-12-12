@@ -26,12 +26,25 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/typeSpinner"
         android:background="@drawable/textfield_selector"/>
-    <Button android:layout_width="wrap_content"
+
+
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/addButton1"
         android:layout_below="@id/typeSpinner"
         android:text="addListView 1"
         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/immersiveMode"
+        android:layout_below="@id/typeSpinner"
+        android:layout_toRightOf="@id/addButton1"
+        android:text="immersive Mode"
+        />
+
 
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"

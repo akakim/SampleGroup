@@ -21,8 +21,6 @@ public class SwipeRefreshBottomLayoutActivity extends AppCompatActivity implemen
 
         ft.replace(R.id.container_layout,new SampleSwipeBotttomLayer(), Constants.TAG_SAMPLE_SWIPE_BOTTOM);
 
-        ft.addToBackStack(null);
-
         ft.commit();
 
 

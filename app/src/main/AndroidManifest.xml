@@ -37,6 +37,7 @@
         <activity android:name=".samples.BitmapSamplesActivity" />
         <activity android:name=".bitmaps.BitmapAsynchTaskActivity" />
         <activity android:name=".samples.SwipeRefreshBottomLayoutActivity"></activity>
+        <activity android:name=".samples.AcvImgExplorer"></activity>
     </application>
 
 </manifest>

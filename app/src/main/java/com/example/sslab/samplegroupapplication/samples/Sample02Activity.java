@@ -1,5 +1,6 @@
 package com.example.sslab.samplegroupapplication.samples;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,11 @@ public class Sample02Activity extends AppCompatActivity
     Button addButton1;
     Button addButton2;
     Button addButton3;
+    Button immersiveMode;
+
+    View 	decorView;
+    int	uiOption;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +46,13 @@ public class Sample02Activity extends AppCompatActivity
         addButton1  = (  Button )findViewById(  R.id.addButton1  );
         addButton2  = (  Button )findViewById(  R.id.addButton2  );
         addButton3  = (  Button )findViewById(  R.id.addButton3  );
+        immersiveMode = ( Button )findViewById( R.id.immersiveMode );
+
         edText      = ( EditText )findViewById(R.id.edText);
         addButton1.setOnClickListener(this);
         addButton2.setOnClickListener(this);
         addButton3.setOnClickListener(this);
+        immersiveMode.setOnClickListener(this);
 
         String [] arrayStr = getResources().getStringArray(R.array.itemValues);
         for(int i = 0;i <arrayStr.length;i++){
@@ -59,6 +68,19 @@ public class Sample02Activity extends AppCompatActivity
         spinner.setAdapter(spinnerAdapter);
         listView.setOnItemSelectedListener(this);
 
+
+        decorView   = getWindow().getDecorView();
+        uiOption    = getWindow().getDecorView().getSystemUiVisibility();
+
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH){
+
+            uiOption |= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        }
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN )
+            uiOption |= View.SYSTEM_UI_FLAG_FULLSCREEN;
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT )
+            uiOption |= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
     }
 
     @Override
@@ -73,6 +95,13 @@ public class Sample02Activity extends AppCompatActivity
 
 
         super.onResume();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        if(hasFocus)
+            decorView.setSystemUiVisibility( uiOption );
+
     }
 
     @Override
@@ -105,7 +134,12 @@ public class Sample02Activity extends AppCompatActivity
                 listView.smoothScrollToPosition(someValues.size());
                 break;
 
+            case R.id.immersiveMode:
+                break;
+
         }
+
+
     }
 
     @Override
@@ -118,4 +152,7 @@ public class Sample02Activity extends AppCompatActivity
     public void onNothingSelected(AdapterView<?> adapterView) {
         Toast.makeText(this,"nothingSelected",Toast.LENGTH_SHORT).show();
     }
+
+
+
 }

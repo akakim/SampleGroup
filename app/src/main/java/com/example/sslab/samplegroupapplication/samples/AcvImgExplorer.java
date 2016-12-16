@@ -58,7 +58,7 @@ public class AcvImgExplorer extends AppCompatActivity{
     private ListView listFile;
     private GridView gridFile;
     private ArrayList<ImgExplorerItem> arrayFile = new ArrayList<>();
-    private ImgExplorerAdapter adapterList, adapterGrid;
+//    private ImgExplorerAdapter adapterList, adapterGrid;
 //
 //    @Override
 //    protected void onCreate( Bundle savedInstanceState ) {

@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.R;
+import com.example.sslab.samplegroupapplication.util.CommonUtil;
 
 import java.util.ArrayList;
 
@@ -110,7 +111,7 @@ public class Sample02Activity extends AppCompatActivity
         switch (view.getId()){
             case R.id.addButton1:
                 someKeys.add(""+view.getId());
-                String str = edText.getText().toString();
+                String str = CommonUtil.removeFloatingPoint(edText.getText().toString());
                 someValues.add(str);
 
                 adapter.notifyDataSetChanged();

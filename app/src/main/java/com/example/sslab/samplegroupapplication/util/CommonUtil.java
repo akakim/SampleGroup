@@ -81,6 +81,17 @@ public class CommonUtil {
         return res;
     }
 
+    public static String removeFloatingPoint(String sTarget){
+        int index = sTarget.indexOf(".");
+
+        // .이 없는경우 그대로 return
+        if (index == -1)
+            return sTarget;
+
+        String result = sTarget.substring(index,sTarget.length());
+        return result;
+    }
+
     public static String formatDate( String str ) {
         String date = "";
         if ( str == null || str.equals( "null" ) ) {

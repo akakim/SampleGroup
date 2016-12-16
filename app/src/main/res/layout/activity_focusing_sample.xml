@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_focusing_sample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sslab.samplegroupapplication.samples.FocusingSampleActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/someItemsListView"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e1e1e1"
+            android:columnCount="4"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_height="66dp"
+                android:drawablePadding="7.5dp"
+                android:paddingLeft="21dp"
+                android:text="최종결정매입가"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="#243770"
+                android:background="#f5f5fa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="4" />
+
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="확정제안가"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/fixProposAmt"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="추가감가금액"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/addtionallyDepreciatedValue"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="채무총액"
+                android:textSize="16sp"
+                android:textColor="#e14e4e"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="3"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/deptSum"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="미회수원금"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/unclectPamtAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="경과이자"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/accrdintrAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="경과리스료"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/elapseLeaseAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="해지패널티"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/afterCancelPenalty"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="추가청구액"
+                android:textSize="16sp"
+                android:textColor="#e14e4e"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="3"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/addSplyAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="연체원금"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/ovrduPamtAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="연체이자"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/ovrduIntrAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="승계수수료"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/succsnCommssAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="자동차세"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/autoTax"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="기타정산"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/etcExcalc"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="예치보증금"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/balanceGrntyAmt"/>
+
+
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="상품화비용"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/commercializationCostAg"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="소모품, 부품 비용"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/expendablePartsCostAg"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="보증금"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/grntyAmt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="선납리스료, 선납금 등"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/prercptLeaseBamt"/>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="매도지불액"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/sellPaymentCost"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="1dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="최종 결정 매입가"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/finalPurchaseValue"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_width="195dp"
+                android:layout_height="48dp"
+                android:text="고객정산잔금"
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#f5f5fa"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="310.5dp"
+                android:layout_height="48dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#565656"
+                android:background="#fafafa"
+                android:layout_gravity="fill"
+                android:layout_columnSpan="1"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:id="@+id/customerCalculatedSurplusValue"/>
+        </GridLayout>
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="66dp"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:background="#f0f0f5">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="37.5dp"-->
+        <!--android:drawableLeft="@drawable/icon_dot"-->
+        <!--android:drawablePadding="7.5dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="추가정보"-->
+        <!--android:textColor="#243770"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textStyle="bold"/>-->
+        <!--</RelativeLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="매입계산서 발행 여부"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="310.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<com.tripath.autoground.widget.SpinnerTypeSelector-->
+        <!--android:id="@+id/spinnerPrintBill"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_margin="7.5dp"-->
+        <!--android:background="@drawable/spinner_selector"-->
+        <!--android:text=""-->
+        <!--android:textColor="#565656"/>-->
+        <!--</RelativeLayout>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="판매예상금액"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="323.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textPriceExpect"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="7.5dp"-->
+        <!--android:gravity="center_vertical|registNumber"-->
+        <!--android:layout_toLeftOf="@+id/textExpectPriceEnd"-->
+        <!--android:inputType="number"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textExpectPriceEnd"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingRight="20dp"-->
+        <!--android:text="원"-->
+        <!--android:textSize="15sp"/>-->
+        <!--</RelativeLayout>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#e1e1e1"-->
+        <!--android:orientation="vertical"/>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="공급가액 (상품)"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textSupplyCost"-->
+        <!--android:layout_width="310.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:gravity="center_vertical|registNumber"-->
+        <!--android:paddingRight="7.5dp"-->
+        <!--android:paddingLeft="9dp"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="부가세 (상품)"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textVat"-->
+        <!--android:layout_width="323.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:gravity="center_vertical|registNumber"-->
+        <!--android:paddingRight="20.5dp"-->
+        <!--android:paddingLeft="9dp"-->
+        <!--android:textSize="15sp"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="고객부담정산금"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp">-->
+        <!--</TextView>-->
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/textClientCost"-->
+        <!--android:layout_width="310.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:gravity="center_vertical|registNumber"-->
+        <!--android:paddingRight="7.5dp"-->
+        <!--android:paddingLeft="9dp"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="최종고객정산금액"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textFinalClientPrice2"-->
+        <!--android:layout_width="323.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:gravity="center_vertical|registNumber"-->
+        <!--android:paddingRight="20.5dp"-->
+        <!--android:paddingLeft="9dp"-->
+        <!--android:textSize="15sp"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="매입정산 (입금)"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textCalcDeposit"-->
+        <!--android:layout_width="310.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:gravity="center_vertical|registNumber"-->
+        <!--android:paddingRight="7.5dp"-->
+        <!--android:paddingLeft="9dp"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="매입정산 (송금)"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp">-->
+        <!--</TextView>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textCalcTransfer"-->
+        <!--android:layout_width="323.5dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:gravity="center_vertical|registNumber"-->
+        <!--android:paddingRight="20.5dp"-->
+        <!--android:paddingLeft="9dp"-->
+        <!--android:textSize="15sp"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="매입정산"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textCalc"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="9dp"-->
+        <!--android:textSize="15sp"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="195dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#f5f5fa"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="21dp"-->
+        <!--android:text="비고"-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#fafafa"-->
+        <!--&gt;-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/edDesc"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="7.5dp"-->
+        <!--android:layout_marginLeft="7.5dp"-->
+        <!--android:layout_marginRight="20.5dp"-->
+        <!--android:layout_marginTop="7.5dp"-->
+        <!--android:background="@drawable/table_textfield_default"-->
+        <!--android:text=""-->
+        <!--android:textColor="#565656"-->
+        <!--android:textSize="15sp"/>-->
+        <!--</RelativeLayout>-->
+
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/status_layer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="1dp"
+            android:background="#f0f0f5"
+            android:gravity="top|center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPrev"
+                android:layout_width="160dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="75dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="60dp"
+                android:text="이전"
+                android:textColor="#ffffff"
+                android:textSize="21sp"/>
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="160dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="75dp"
+                android:layout_marginTop="60dp"
+                android:text="이동 및 팝업 "
+                android:textColor="#ffffff"
+                android:textSize="21sp"/>
+
+            <Button
+                android:id="@+id/btnApprovalPreview"
+                android:layout_width="160dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="75dp"
+                android:layout_marginTop="60dp"
+                android:text="기안 미리보기"
+                android:textColor="#ffffff"
+                android:textSize="21sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

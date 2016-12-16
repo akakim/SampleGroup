@@ -36,8 +36,10 @@
         <activity android:name=".samples.DisplayBitmapActivity" />
         <activity android:name=".samples.BitmapSamplesActivity" />
         <activity android:name=".bitmaps.BitmapAsynchTaskActivity" />
-        <activity android:name=".samples.SwipeRefreshBottomLayoutActivity"></activity>
-        <activity android:name=".samples.AcvImgExplorer"></activity>
+        <activity android:name=".samples.SwipeRefreshBottomLayoutActivity" />
+        <activity android:name=".samples.AcvImgExplorer" />
+        <activity android:name=".samples.SampleUpdatedActivity" />
+        <activity android:name=".samples.FocusingSampleActivity"></activity>
     </application>
 
 </manifest>

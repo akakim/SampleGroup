@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:minHeight="48dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="66dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1dp"
+        android:background="#fafafa">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="316dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1dp"
+        android:background="#fafafa">
+
+        <TextView
+            android:id="@+id/textCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="#fafafa"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/edCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:layout_margin="7.5dp"
+            android:background="@drawable/textfield_selector"/>
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="323.5dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1dp"
+        android:background="#fafafa"
+        android:orientation="horizontal"
+        >
+        <com.example.sslab.samplegroupapplication.widget.EditNumber
+            android:id="@+id/edCost"
+            android:layout_width="274.5dp"
+            android:layout_height="match_parent"
+            android:layout_margin="7.5dp"
+            android:paddingRight="10.5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="1.5dp"
+            android:text="원"/>
+    </LinearLayout>
+</LinearLayout>

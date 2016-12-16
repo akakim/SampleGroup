@@ -25,7 +25,8 @@
         android:id="@+id/edText"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/typeSpinner"
-        android:background="@drawable/textfield_selector"/>
+        android:background="@drawable/textfield_selector"
+        android:inputType="numberDecimal"/>
 
 
     <Button

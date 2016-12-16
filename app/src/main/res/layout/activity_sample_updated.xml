@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sample_updated"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sslab.samplegroupapplication.samples.SampleUpdatedActivity"
+    android:columnCount="2">
+
+    <ListView
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="3"
+        android:id="@+id/bangsSrcListview"
+        ></ListView>
+
+    <TextView
+        android:layout_height="150dp"
+        android:text="target"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="1"
+        android:id="@+id/bangsTopTargetTextView"
+        />
+
+    <TextView
+        android:layout_height="150dp"
+        android:text="target"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="1"
+        android:id="@+id/bangsBottomTargetTextView"
+        />
+    <Button
+        android:layout_height="150dp"
+        android:text="PUSH"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="1"
+        android:id="@+id/bangsAddButton"
+
+        />
+
+
+    <ListView
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="3"
+        android:id="@+id/jungsSrcListview"
+        ></ListView>
+
+
+    <TextView
+        android:layout_height="150dp"
+        android:text="target"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="1"
+        android:id="@+id/jungsTopTargetTextView" />
+
+    <TextView
+        android:layout_height="150dp"
+        android:text="target"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="1"
+        android:id="@+id/jungsBottomTargetTextView"/>
+    <Button
+        android:layout_height="150dp"
+        android:text="PUSH"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="1"
+        android:id="@+id/jungsAddButton"
+
+        />
+
+</GridLayout>

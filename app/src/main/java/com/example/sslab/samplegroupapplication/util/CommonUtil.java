@@ -1,6 +1,10 @@
 package com.example.sslab.samplegroupapplication.util;
 
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
@@ -154,5 +158,39 @@ public class CommonUtil {
             Log.e( TAG, "Failed to Cast String as Long : " + e.getMessage() );
         }
         return 0;
+    }
+
+    public static String checkTaggedView( ViewGroup v ) {
+        String msg = "";
+        for ( int i = 0; i < v.getChildCount(); i++ ) {
+            View child = v.getChildAt( i );
+            if ( child.getVisibility() == View.VISIBLE ) {
+                if ( child instanceof TextView) {
+                    TextView text = (TextView) child;
+                    if ( text.getTag() != null && text.getTag().toString().length() > 0 ) {
+                        if ( text.getText().toString().length() < 1 ) {
+                            msg = text.getTag().toString();
+						Log.d( "Tag", "View Tag : " + text.getTag().toString() );
+                        }
+                    }
+                } else if ( child instanceof ViewGroup ) {
+                    if ( msg.length() == 0 ) {
+                        ViewGroup g = (ViewGroup) child;
+                        msg = checkTaggedView( g );
+                        if ( g.getTag() != null && g.getTag().toString().length() > 0 ) {
+                            Log.d("Tag", "View Tag : " + g.getTag().toString());
+                        }
+                        if( g.getVisibility() == View.VISIBLE){
+                            Log.d("Tag", "View Tag : is visible");
+                        }else if(g.getVisibility() == View.INVISIBLE){
+                            Log.d("Tag", "View Tag : is invisible");
+                        }else {
+                            Log.d("Tag", "View Tag : is gone");
+                        }
+                    }
+                }
+            }
+        }
+        return msg;
     }
 }

@@ -39,7 +39,13 @@
         <activity android:name=".samples.SwipeRefreshBottomLayoutActivity" />
         <activity android:name=".samples.AcvImgExplorer" />
         <activity android:name=".samples.SampleUpdatedActivity" />
-        <activity android:name=".samples.FocusingSampleActivity"></activity>
+        <activity android:name=".samples.FocusingSampleActivity" />
+        <activity
+            android:name=".testActivity.AndroidTestActivity"
+            android:label="@string/title_activity_android_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".samples.FocusingLinearActivity" />
+        <activity android:name=".samples.URLConnectionSampleActivity"></activity>
     </application>
 
 </manifest>

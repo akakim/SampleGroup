@@ -12,5 +12,6 @@
         <item>Nexus8</item>
         <item>Nexus9</item>
     </string-array>
+    <string name="title_activity_android_test">AndroidTestActivity</string>
 
 </resources>

@@ -45,7 +45,11 @@
             android:label="@string/title_activity_android_test"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".samples.FocusingLinearActivity" />
-        <activity android:name=".samples.URLConnectionSampleActivity"></activity>
+        <activity android:name=".samples.URLConnectionSampleActivity" />
+        <activity android:name=".samples.NetWorkDemoActivity" />
+        <activity android:name=".samples.DialogSamplesActivity" />
+        <activity android:name=".samples.FrameAnimationActivity" />
+        <activity android:name=".samples.AnimationActivity"></activity>
     </application>
 
 </manifest>

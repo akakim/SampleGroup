@@ -13,7 +13,6 @@ import com.example.sslab.samplegroupapplication.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -93,9 +92,19 @@ public class URLConnectionSampleActivity extends AppCompatActivity implements Vi
         Toast.makeText(this,s,length);
     }
 
+    protected void requestINS_SALE_01(){
+
+    }
+    protected void requestINS_SALE_02(){
+
+    }
+    protected void requestINS_SALE_03(){
+
+    }
     private class URLConnectionSampleTask extends AsyncTask<URL,String,String>{
         JSONArray  outputArr = new JSONArray();
         JSONObject output = new JSONObject();
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -106,6 +115,7 @@ public class URLConnectionSampleActivity extends AppCompatActivity implements Vi
             URL list [] = urls.clone();
 
             HttpURLConnection connection [] = new HttpURLConnection[list.length];
+
 
             try {
                 for(int i = 0;i<list.length;i++) {
@@ -157,9 +167,50 @@ public class URLConnectionSampleActivity extends AppCompatActivity implements Vi
 
                     //[null, Connection, Content-Type, Date, Keep-Alive, Server, Transfer-Encoding, Vary, X-Android-Received-Millis, X-Android-Response-Source, X-Android-Selected-Protocol, X-Android-Sent-Millis]
                     List<String> connectionList= map.get("Connection");
-                    
+                    List<String> ContentTypeList= map.get("Content-Type");
+                    List<String> Date= map.get("Date");
+                    List<String> Keep_Alive= map.get("Keep-Alive");
+                    List<String> Server= map.get("Server");
+                    List<String> Transfer_Encoding= map.get("Transfer-Encoding");
+                    List<String> Vary= map.get("Vary");
+                    List<String> X_Android_Received_Millis= map.get("X-Android-Received-Millis");
+                    List<String> X_Android_Response_Source= map.get("X-Android-Response-Source");
+                    List<String> X_Android_Selected_Protocol= map.get("X-Android-Selected-Protocol");
+                    List<String> X_Android_Sent_Millis= map.get("X-Android-Sent-Millis");
+
                     for(String s: connectionList){
                         Log.d("connection",s);
+                    }
+                    for(String s: ContentTypeList){
+                        Log.d("ContentTypeList",s);
+                    }
+                    for(String s: Date){
+                        Log.d("Date",s);
+                    }
+                    for(String s: Keep_Alive){
+                        Log.d("Keep_Alive",s);
+                    }
+                    for(String s: Server){
+                        Log.d("Server",s);
+                    }
+                    for(String s: Transfer_Encoding){
+                        Log.d("Transfer_Encoding",s);
+                    }
+                    // 캐쉬와 관련된 기능이다.
+                    for(String s: Vary){
+                        Log.d("Vary",s);
+                    }
+                    for(String s: X_Android_Received_Millis){
+                        Log.d("AndroidRM",s);
+                    }
+                    for(String s: X_Android_Response_Source){
+                        Log.d("AndroidRS",s);
+                    }
+                    for(String s: X_Android_Selected_Protocol){
+                        Log.d("AndroidRS",s);
+                    }
+                    for(String s: X_Android_Sent_Millis){
+                        Log.d("AndroidRS",s);
                     }
                     if(responseCode == HttpURLConnection.HTTP_OK){
                         InputStream input = connection[i].getInputStream();
@@ -173,7 +224,8 @@ public class URLConnectionSampleActivity extends AppCompatActivity implements Vi
                         byteData = bout.toByteArray();
 
                         response = new String(byteData);
-                        output.put(String.valueOf(i),response);
+                        output = new JSONObject(response);
+//                        output.put(String.valueOf(i),response);
 
                         Log.d("response",response);
                     }else {
@@ -199,7 +251,7 @@ public class URLConnectionSampleActivity extends AppCompatActivity implements Vi
             setJsonObject(output);
 
             /**
-             * public static final int HTTP_ACCEPTED = 202;
+             * public static final int HTTP_ACCEPTED = 202;         요청 처리가 승인되었지만 처리가 완료되지 않았습니다.
              public static final int HTTP_BAD_GATEWAY = 502;
              public static final int HTTP_BAD_METHOD = 405;
              public static final int HTTP_BAD_REQUEST = 400;
@@ -221,7 +273,7 @@ public class URLConnectionSampleActivity extends AppCompatActivity implements Vi
              public static final int HTTP_NOT_IMPLEMENTED = 501;
              public static final int HTTP_NOT_MODIFIED = 304;
              public static final int HTTP_NO_CONTENT = 204;
-             public static final int HTTP_OK = 200;
+             public static final int HTTP_OK = 200;                  요청이 성공했습니다.
              public static final int HTTP_PARTIAL = 206;
              public static final int HTTP_PAYMENT_REQUIRED = 402;
              public static final int HTTP_PRECON_FAILED = 412;

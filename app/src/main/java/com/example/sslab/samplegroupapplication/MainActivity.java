@@ -43,40 +43,52 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.list);
-        searchEditText = (EditText) findViewById(R.id.searchEditText);
-        searchEditText.setFocusable(false);
-        searchEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                MainActivity.this.adapter.getFilter().filter(charSequence);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+        // searchSample 실패 .. ㅠ
+//        searchEditText = (EditText) findViewById(R.id.searchEditText);
+//        searchEditText.setFocusable(false);
+//        searchEditText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                MainActivity.this.adapter.getFilter().filter(charSequence);
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
         mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
 
         Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(mUncaughtExceptionHandler,this));
 
 
-        items.add(new activityList(ThreadMessageQueueSample.class.getSimpleName(), ThreadMessageQueueSample.class));
-        items.add(new activityList(Sample02Activity.class.getSimpleName(), Sample02Activity.class));
-        items.add(new activityList(CustomTextViewActivity.class.getSimpleName(),CustomTextViewActivity.class));
-        items.add(new activityList(GridViewSample.class.getSimpleName(),GridViewSample.class));
+        items.add(new activityList(ThreadMessageQueueSample.class.getSimpleName(), ThreadMessageQueueSample.class));                    // 스레드와 큐.. 즉, 동기화된 네트워크 통신을 하고싶었다.
+        items.add(new activityList(Sample02Activity.class.getSimpleName(), Sample02Activity.class));                                    // 간단한 버튼 이나, 커스터마이징 뷰목록들
+        items.add(new activityList(CustomTextViewActivity.class.getSimpleName(),CustomTextViewActivity.class));                         // 간단한 버튼 이나, 커스터마이징 뷰목록들
+        items.add(new activityList(GridViewSample.class.getSimpleName(),GridViewSample.class));                                         //  그리드 뷰 셈플
+        /*
+         * listview의 크기를 측정하는 로직이 들어갔다.
+         *  listview가 ScrollView안에 들어가지않는다면 필요가 없다.
+         */
         items.add(new activityList(ProgramaticallySettingLayoutHeightActivity.class.getSimpleName(),ProgramaticallySettingLayoutHeightActivity.class));
+        /**
+         * 위와 마찬가지이다.
+         */
         items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
-        items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));
-        items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));
-        items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));
-        items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));
-        items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));
+        items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));     // expandable list view 의 샘플 .
+        items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));     // swipe 이벤트가 발생하면
+        items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
+        items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
+        items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));               // 새로운 네트워크모듈을 생성
+
+
         filteredItems.addAll(items);
 //        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),BitmapSamplesActivity.class));
         adapter = new ListViewAdapter(this, android.R.layout.simple_list_item_1, filteredItems);

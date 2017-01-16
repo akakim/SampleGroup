@@ -95,7 +95,7 @@ public class CustomSpotsDialog extends AlertDialog {
         int progressWidth = getContext().getResources().getDimensionPixelSize(dmax.dialog.R.dimen.progress_width);
         for (int i = 0; i < spots.length; i++) {
             AnimatedView v = new AnimatedView(getContext());
-            v.setBackgroundResource(dmax.dialog.R.drawable.dmax_spots_spot);
+            v.setBackgroundResource(R.drawable.dmax_spots_spot);
             v.setTarget(progressWidth);
             v.setXFactor(-1f);
             progress.addView(v, size, size);

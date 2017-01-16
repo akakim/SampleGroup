@@ -1,1 +1,7 @@
 include ':app', ':mylibrary'
+// 카카오톡 관련 라이브러리들
+include ':util', ':auth', ':kakaolink', ':kakaotalk', ':usermgmt', ':kakaostory', ':push', ':friends', ':storage', ':network', ':s2', ':kakaonavi', ':test-common', ':kakao-open-android-link-40-sample'
+include ':kakao-open-android-sdk-sample'
+include ':kakao-open-android-link-sample'
+include ':kakao-open-android-s2-sample'
+include ':kakao-open-android-navi-sample'

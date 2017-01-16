@@ -2,10 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sslab.samplegroupapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".common.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:resizeableActivity="true"
+        android:supportsPictureInPicture="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -15,6 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
         <activity android:name=".samples.ThreadMessageQueueSample" />
         <activity android:name=".samples.Sample02Activity" />
         <activity android:name=".samples.CustomTextViewActivity" />
@@ -49,7 +59,12 @@
         <activity android:name=".samples.NetWorkDemoActivity" />
         <activity android:name=".samples.DialogSamplesActivity" />
         <activity android:name=".samples.FrameAnimationActivity" />
-        <activity android:name=".samples.AnimationActivity"></activity>
+        <activity android:name=".samples.AnimationActivity" />
+        <activity android:name=".samples.DilatingDotActivity" />
+        <activity android:name=".kakao.KakaoLoginSample" />
+        <activity android:name=".samples.SNSSampleActivity" />
+        <activity android:name=".kakao.SignUpActivity" />
+        <activity android:name=".kakao.GetUserInfoActivity"></activity>
     </application>
 
 </manifest>

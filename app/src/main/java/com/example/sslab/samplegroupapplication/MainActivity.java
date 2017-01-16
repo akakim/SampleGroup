@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
         items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));               // 새로운 네트워크모듈을 생성
         items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
 
 
         filteredItems.addAll(items);
@@ -98,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(),items.get(i).getaClass());
+                activityList item = (activityList) adapterView.getItemAtPosition( i );
+                Intent intent = new Intent(getApplicationContext(),item.getaClass());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }

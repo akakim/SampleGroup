@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DilatingDotsProgressBar">
+        <attr name="android:radius" />
+        <attr name="android:color" />
+        <attr name="dd_numDots" format="integer" />
+        <attr name="dd_scaleMultiplier" format="float" />
+        <attr name="dd_animationDuration" format="integer" />
+        <attr name="dd_horizontalSpacing" format="dimension" />
+        <attr name="dd_endColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="KakaoDialogSpinner">
+        <attr name="kakao_prompt" format="string"/>
+        <attr name="kakao_entries" format="reference"/>
+        <attr name="kakao_icon" format="reference"/>
+        <attr name="kakao_dialogTitle" format="reference"/>
+        <attr name="kakao_showTitleDivider" format="boolean"/>
+        <attr name="kakao_titleTextColor" format="reference"/>
+    </declare-styleable>
+</resources>

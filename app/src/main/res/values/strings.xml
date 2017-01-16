@@ -14,4 +14,25 @@
     </string-array>
     <string name="title_activity_android_test">AndroidTestActivity</string>
 
+
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string-array name="usermgmg_gender_types">
+        <item>@string/female</item>
+        <item>@string/male</item>
+    </string-array>
+
+    <string name="number_of_dots">Number of Dots</string>
+    <string name="radius">Radius:</string>
+    <string name="spacing">Spacing:</string>
+    <string name="animation_duration">Animation Length:</string>
+    <string name="scale_multiplier">Scale Multiplier:</string>
+    <string name="color">Color:</string>
+    <string name="color_2">Secondary color:</string>
+
+
+    <string name="kakao_app_key">d92c0eddbbb46fdf370dce921127a8a4</string>
+    <string name="google_app_key">AIzaSyCmQXn-ULh_r7OJ1poMazfXmTRfkTRzjOU</string>
+
+    <string name="server_client_id">567537222611-8fn8schgh5brg10j67ukkmhuk0fibpv5.apps.googleusercontent.com</string> <!-- 구글 clientID -->
 </resources>

@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name=".common.GlobalApplication"
         android:allowBackup="true"
@@ -24,6 +29,9 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
         <activity android:name=".samples.ThreadMessageQueueSample" />
         <activity android:name=".samples.Sample02Activity" />
@@ -61,10 +69,15 @@
         <activity android:name=".samples.FrameAnimationActivity" />
         <activity android:name=".samples.AnimationActivity" />
         <activity android:name=".samples.DilatingDotActivity" />
-        <activity android:name=".kakao.KakaoLoginSample" />
+        <activity android:name=".SNSSamples.KakaoLoginSample" />
         <activity android:name=".samples.SNSSampleActivity" />
-        <activity android:name=".kakao.SignUpActivity" />
-        <activity android:name=".kakao.GetUserInfoActivity"></activity>
+        <activity android:name=".SNSSamples.SignUpActivity" />
+        <activity android:name=".SNSSamples.GetUserInfoActivity" />
+        <activity android:name=".samples.SVGSampleActivity" />
+        <activity android:name=".samples.MyCloudProviderActivity" />
+        <activity android:name=".SNSSamples.GoogleLoginSampleActivity" />
+        <activity android:name=".SNSSamples.FacebookActivity" />
+        <activity android:name=".samples.DaggerSample"></activity>
     </application>
 
 </manifest>

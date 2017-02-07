@@ -2,6 +2,7 @@ package com.example.sslab.samplegroupapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.PowerManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     EditText searchEditText;
     private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
-
+    PowerManager pm = ( PowerManager )getSystemService( POWER_SERVICE );
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,10 +86,13 @@ public class MainActivity extends AppCompatActivity {
         items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
         items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
         items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
-        items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));               // 새로운 네트워크모듈을 생성
-        items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));               // 새로운 네트워크모듈을 생성
-        items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));                           // 새로운 네트워크모듈을 생성
+        items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));                                   // 새로운 네트워크모듈을 생성
+        items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
         items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
+        items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
+
+//        items.add(new activityList(MyCloudProviderActivity.class.getSimpleName(),MyCloudProviderActivity.class));                       // https://developer.android.com/samples/StorageProvider
 
 
         filteredItems.addAll(items);

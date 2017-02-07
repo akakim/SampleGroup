@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "567537222611",
+    "project_id": "default-demo-app-70a85"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567537222611:android:36d71de334cec783",
+        "android_client_info": {
+          "package_name": "com.example.sslab.samplegroupapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567537222611-6ao1d4atbqbtklu5c8lcdoc1jfc322cp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sslab.samplegroupapplication",
+            "certificate_hash": "BF0D0704C876A2A9F0AAF83AE6D14B97EB568C5A"
+          }
+        },
+        {
+          "client_id": "567537222611-8fn8schgh5brg10j67ukkmhuk0fibpv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmQXn-ULh_r7OJ1poMazfXmTRfkTRzjOU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

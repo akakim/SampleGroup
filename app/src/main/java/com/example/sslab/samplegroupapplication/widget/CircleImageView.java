@@ -9,6 +9,8 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
 import android.view.animation.Animation;
 import android.widget.ImageView;
@@ -93,10 +95,12 @@ public class CircleImageView extends ImageView {
     /**
      * Update the background color of the circle image view.
      */
+    @SuppressWarnings("ResourceType")
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void setBackgroundColor(int colorRes) {
         if (getBackground() instanceof ShapeDrawable) {
             final Resources res = getResources();
-            ((ShapeDrawable) getBackground()).getPaint().setColor(res.getColor(colorRes));
+            ((ShapeDrawable) getBackground()).getPaint().setColor(res.getColor(colorRes , null));
         }
     }
 

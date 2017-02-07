@@ -18,4 +18,6 @@
         <attr name="kakao_showTitleDivider" format="boolean"/>
         <attr name="kakao_titleTextColor" format="reference"/>
     </declare-styleable>
+
+
 </resources>

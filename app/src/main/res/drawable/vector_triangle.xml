@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="@dimen/_60sdp"
+    android:width="@dimen/_60sdp"
+    android:viewportHeight="600"
+    android:viewportWidth="600" >
+
+    <group
+        android:name="triangleGroup"
+        android:pivotX="300.0"
+        android:pivotY="300.0">
+        <path
+            android:name="triangle"
+            android:fillColor="#000000"
+            android:pathData="M150 100 L75 200 L225 200 Z"/>
+    </group>
+
+    <group
+        android:name="bezierCurve">
+
+        <path
+            android:name="lineAB"
+            android:strokeColor="#ff0000"
+            android:strokeWidth="3"
+            android:pathData="M 100 350 l 150 -300"
+            />
+
+        <path
+            android:name="lineAD"
+            android:strokeColor="#ff0000"
+            android:strokeWidth="3"
+            android:pathData="M 100 350 l 150 300"
+            />
+        <path
+            android:name="lineBC"
+            android:strokeColor="#ff0000"
+            android:strokeWidth="3"
+            android:pathData="M 250 50 l 150 300"
+            />
+        <path android:pathData="M 175 200 l 150 0"
+            android:strokeWidth="3"
+            android:strokeColor="@color/green"/>
+
+        <path android:pathData="M 100 350 q 150 -300 300 0"
+            android:strokeWidth="3"
+            android:strokeColor="@color/blue"/>
+
+        <g android:strokeColor="@color/black"
+            android:strokeWidth="3">
+
+        </g>
+
+    </group>
+</vector>

@@ -1,6 +1,7 @@
 package com.example.sslab.samplegroupapplication.widget;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
@@ -14,13 +15,23 @@ import android.view.animation.Interpolator;
  */
 
 public class AnimatedSVGView extends View {
-    public static final int STATE_NOT_STARTED = 0;
-    public static final int STATE_TRACE_STARTED = 0;
-    public static final int STATE_FILL_STARTED = 0;
-    public static final int STATE_FINISHED = 0;
 
-    private final String TAG = getClass().getSimpleName();
+    /** The animation has been reset or hasn't started yet. */
+    public static final int STATE_NOT_STARTED = 0;
+    /** The SVG is being traced */
+    public static final int STATE_TRACE_STARTED = 1;
+    /** The SVG has been traced and is now being filled */
+    public static final int STATE_FILL_STARTED = 2;
+    /** The animation has finished */
+    public static final int STATE_FINISHED = 3;
+
+    private static final String TAG = "AnimatedSvgView";
+
     private static final Interpolator INTERPOLATOR = new DecelerateInterpolator();
+
+    private static float constrain(float min, float max, float v) {
+        return Math.max(min, Math.min(max, v));
+    }
 
     private int mTraceTime = 2000;
     private int mTraceTimePerGlyph = 1000;
@@ -43,22 +54,57 @@ public class AnimatedSVGView extends View {
     private int mHeight;
     private long mStartTime;
 
-    private static float constrain( float min, float max, float v){
-        return Math.max(min,Math.min( max, v ) );
+    private int mState = STATE_NOT_STARTED;
+    private OnStateChangeListener mOnStateChangeListener;
+
+    public AnimatedSVGView(Context context) {
+        super(context);
+        init(context, null);
     }
 
-    public AnimatedSVGView( Context context ){
-        super( context );
-        init( context, null );
+    public AnimatedSVGView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context, attrs);
     }
 
-    private void init(Context context, AttributeSet attrs ){
+    public AnimatedSVGView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
         mFillPaint = new Paint();
         mFillPaint.setAntiAlias( true );
-        mFillPaint.setStyle( Paint.Style.FILL );
+        mFillPaint.setStyle(Paint.Style.FILL);
+
+        mTraceColors = new int[1];
+        mTraceColors[0] = Color.BLACK;
+        mTraceResidueColors = new int[1];
+        mTraceResidueColors[0] = 0x32000000;
 
 
     }
+
+
+
+    /**
+     * Callback for listening to animation state changes
+     */
+    public interface OnStateChangeListener {
+
+        /**
+         * Called when the animation state changes.
+         *
+         * @param state
+         *     The state of the animation.
+         *     Either {{@link #STATE_NOT_STARTED},
+         *     {@link #STATE_TRACE_STARTED}},
+         *     {@link #STATE_FILL_STARTED} or
+         *     {@link #STATE_FINISHED}
+         */
+        void onStateChange(int state);
+    }
+
 
     static final class GlyphData {
 
@@ -66,5 +112,4 @@ public class AnimatedSVGView extends View {
         Paint paint;
         float length;
     }
-
 }

@@ -1,12 +1,10 @@
-package com.example.sslab.samplegroupapplication.bitmaps;
+package com.example.sslab.samplegroupapplication.bitmapsSVGAnim;
 
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.sslab.samplegroupapplication.R;
 import com.example.sslab.samplegroupapplication.fragment.ImageGridLayoutFragment;
 
 public class BitmapAsynchTaskActivity extends FragmentActivity implements ImageGridLayoutFragment.OnFragmentInteractionListener {

@@ -4,14 +4,13 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.data.ICFO;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,7 +25,7 @@ import java.net.URL;
  * Created by SSLAB on 2016-12-26.
  */
 
-public abstract class BaseFragmentActivity extends FragmentActivity{
+public abstract class BaseActivity extends AppCompatActivity{
     protected ProgressDialog progressDialog;
     final String LOADING_SHOW = "LOADING_SHOW";
     final String REMOVE_SHOW = "REMOVE_SHOW";
@@ -47,6 +46,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity{
 
             }else if(msg.obj instanceof Integer){
                 Integer intObj = (Integer)msg.obj;
+
 
 
             }else if(msg.obj instanceof Double){
@@ -104,7 +104,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity{
      */
     protected void showToast(String msg) {
         if(mToast == null){
-            mToast = Toast.makeText(BaseFragmentActivity.this, msg, Toast.LENGTH_SHORT);
+            mToast = Toast.makeText(BaseActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.setGravity(Gravity.CENTER, 0, 0);
         }else{
             mToast.setText(msg);

@@ -26,6 +26,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
+//TODO : 진행하기
 public class AcvImgExplorer extends AppCompatActivity{
     private boolean needPdf = false;        // pdf 파일도 보여줄 필요가 있는지
     private String fileExtension = "";      // pdf도 필요할 땐 확장자를 따로 지정해준다.

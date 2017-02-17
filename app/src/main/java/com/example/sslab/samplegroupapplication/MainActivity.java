@@ -23,22 +23,25 @@ import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.adapter.CommonTextView4ItemAdapter;
 import com.example.sslab.samplegroupapplication.data.activityList;
-import com.example.sslab.samplegroupapplication.samples.BitmapSamplesActivity;
 import com.example.sslab.samplegroupapplication.samples.*;
 import com.example.sslab.samplegroupapplication.util.UncaughtExceptionHandlerApplication;
+import com.example.sslab.samplegroupapplication.webview.*;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
+    final String TAG = getClass().getSimpleName();
     ArrayList<activityList> items = new ArrayList<>();
     ArrayList<activityList> filteredItems = new ArrayList<>();
     ListViewAdapter adapter;
     ListView listView;
     EditText searchEditText;
     private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
-    PowerManager pm = ( PowerManager )getSystemService( POWER_SERVICE );
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new activityList(Sample02Activity.class.getSimpleName(), Sample02Activity.class));                                    // 간단한 버튼 이나, 커스터마이징 뷰목록들
         items.add(new activityList(CustomTextViewActivity.class.getSimpleName(),CustomTextViewActivity.class));                         // 간단한 버튼 이나, 커스터마이징 뷰목록들
         items.add(new activityList(GridViewSample.class.getSimpleName(),GridViewSample.class));                                         //  그리드 뷰 셈플
+        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),BitmapSamplesActivity.class));
         /*
          * listview의 크기를 측정하는 로직이 들어갔다.
          *  listview가 ScrollView안에 들어가지않는다면 필요가 없다.
@@ -91,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
         items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
         items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
         items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
-
+        items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
+        items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
 //        items.add(new activityList(MyCloudProviderActivity.class.getSimpleName(),MyCloudProviderActivity.class));                       // https://developer.android.com/samples/StorageProvider
 
 
@@ -124,6 +129,27 @@ public class MainActivity extends AppCompatActivity {
         super.startActivity(intent, options);
     }
 
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.d(TAG,"keyCode :"+keyCode +"KeyEvent" + event.getAction());
+
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            Log.d(TAG,keyCode + "KEY Menu Pressed");
+        }else if (keyCode == KeyEvent.KEYCODE_HOME ){
+            Log.d(TAG,keyCode + "KEY Home Pressed");
+
+        }else if(keyCode == KeyEvent.KEYCODE_BACK ){
+            Log.d(TAG,keyCode + "KEY Back Pressed");
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void responseData(JSONObject jsonObject) {
+
+    }
 
     private class ListViewAdapter extends ArrayAdapter<activityList> implements Filterable{
 

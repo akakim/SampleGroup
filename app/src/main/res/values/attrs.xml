@@ -19,5 +19,26 @@
         <attr name="kakao_titleTextColor" format="reference"/>
     </declare-styleable>
 
+    <declare-styleable name = "ButtonTextAndImg">
+        <attr name = "src" format = "reference"/>
+        <attr name = "img_size" format = "dimension"/>
+        <attr name = "text" format = "string"/>
+        <attr name = "text_size" format = "dimension"/>
+        <attr name = "text_margin" format = "dimension"/>
+        <attr name = "text_color" format = "color"/>
+    </declare-styleable>
 
+    <declare-styleable name="AnimatedSVGView">
+        <attr name="animatedSvgImageSizeX" format="integer"/>
+        <attr name="animatedSvgImageSizeY" format="integer"/>
+        <attr name="animatedSvgTraceTime" format="string"/>
+        <attr name="animatedSvgTraceTimePerGlyph" format="string"/>
+        <attr name="animatedSvgFillStart" format="string"/>
+        <attr name="animatedSvgFillTime" format="string"/>
+        <attr name="animatedSvgGlyphStrings" format="reference"/>
+        <attr name="animatedSvgTraceColors" format="reference"/>
+        <attr name="animatedSvgTraceResidueColors" format="reference"/>
+        <attr name="animatedSvgTraceMarkerLength" format="integer"/>
+        <attr name="animatedSvgFillColors" format="reference"/>
+    </declare-styleable>
 </resources>

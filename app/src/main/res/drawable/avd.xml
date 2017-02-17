@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vectordrawable" >
+
+    <!--특정 그룹은 rotation animation을 준다. -->
+    <target
+        android:name="rotationGroup"
+        android:animation="@animator/rotation"/>
+    <!-- 이동하는 애니메이션을 주는경우 -->
+    <target
+        android:name="v"
+        android:animation="@animator/path_morph" />
+</animated-vector>

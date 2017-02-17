@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_animated_svg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sslab.samplegroupapplication.bitmapsSVGAnim.AnimatedSVGActivity">
+
+    <com.example.sslab.samplegroupapplication.widget.AnimatedSVGView
+
+        android:id="@+id/animated_svg_view"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:layout_centerInParent="true"
+        app:animatedSvgImageSizeX="400"
+        app:animatedSvgImageSizeY="400"
+        app:animatedSvgTraceTime="2000"
+        app:animatedSvgTraceTimePerGlyph="1000"
+        app:animatedSvgFillStart="1200"
+        app:animatedSvgFillTime="1000"
+        app:animatedSvgGlyphStrings="@array/google_glyph_strings"
+        app:animatedSvgTraceMarkerLength="50"
+        app:animatedSvgFillColors="@array/google_glyph_colors"
+        />
+    <!-- animatedSvgTraceColors 없음 -->
+    <!--animatedSvgTraceResidueColors ,없음 -->
+</RelativeLayout>

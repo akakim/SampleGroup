@@ -9,6 +9,8 @@
 
         <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+
+
     </style>
 
     <style name="PhotoGridLayout">
@@ -16,7 +18,7 @@
         <item name="android:listSelector">@drawable/photogrid_list_selector</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="NoActionBar" parent="Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -32,7 +34,6 @@
         <item name="DialogSpotColor">@android:color/holo_orange_dark</item>
         <item name="DialogSpotCount">3</item>
     </style>
-
 
 
     <style name="SeekbarLabel">
@@ -76,6 +77,7 @@
         <item name="android:layout_height">57dp</item>
         <item name="android:layout_width">fill_parent</item>
     </style>
+
     <style name="com_kakao_profile_property_value" parent="@android:style/Widget.EditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">57dp</item>
@@ -88,4 +90,8 @@
         <item name="android:textColor">@color/color3</item>
         <item name="android:background">@drawable/selector_editbox_bg</item>
     </style>
+
+    <style name="NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -1,14 +1,13 @@
 package com.example.sslab.samplegroupapplication.samples;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.sslab.samplegroupapplication.BaseFragmentActivity;
+import com.example.sslab.samplegroupapplication.BaseActivity;
 import com.example.sslab.samplegroupapplication.R;
 
 import org.json.JSONObject;
 
-public class NetWorkDemoActivity extends BaseFragmentActivity {
+public class NetWorkDemoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

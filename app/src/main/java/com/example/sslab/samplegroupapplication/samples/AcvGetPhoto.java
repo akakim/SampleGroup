@@ -17,6 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+//TODO: 진행하기 
 public class AcvGetPhoto extends Activity {
 //	private String dir;
 //	private String file = dir + "/";

@@ -93,7 +93,11 @@
             android:label="@string/title_activity_web_view_video_sample"
             android:theme="@style/NoActionBar" />
         <activity android:name=".webview.WebViewSampleGroupActivity" />
-        <activity android:name=".bitmapsSVGAnim.AndToAppleIconActivity"></activity>
+        <activity android:name=".bitmapsSVGAnim.AndToAppleIconActivity" />
+        <activity android:name=".imageFileView.ModeSettingActivity" />
+        <activity android:name=".imageFileView.FileShowActivity" />
+        <activity android:name=".imageFileView.GalleryActivity" />
+        <activity android:name=".imageFileView.ImageShowActivity"></activity>
     </application>
 
 </manifest>

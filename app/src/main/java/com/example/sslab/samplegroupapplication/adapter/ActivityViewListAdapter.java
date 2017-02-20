@@ -14,17 +14,18 @@ import java.util.List;
  * Created by SSLAB on 2016-11-30.
  */
 
-public class ActivityViewListAdapter extends ArrayAdapter<activityList> {
+public class ActivityViewListAdapter extends ArrayAdapter {
 
-    public ActivityViewListAdapter(Context context, int resource, List<activityList> objects) {
-        super(context, resource, objects);
+    public ActivityViewListAdapter(Context context, int resource, List<? extends activityList> objects) {
+        super(context, resource,objects);
+
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View v = super.getView(position, convertView, parent);
-        final activityList item = getItem(position);
+        final activityList item = ( activityList )getItem(position);
         TextView textView = (TextView)v.findViewById(android.R.id.text1);
         textView.setText(item.getActivityName());
         return v;

@@ -1,28 +1,55 @@
 package com.example.sslab.samplegroupapplication.fragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.androidquery.AQuery;
 import com.example.sslab.samplegroupapplication.R;
+import com.example.sslab.samplegroupapplication.data.GridImageItem;
+import com.example.sslab.samplegroupapplication.imageFileView.ImageShowActivity;
+import com.example.sslab.samplegroupapplication.widget.DialogBuilder;
+
+import java.io.File;
+import java.util.ArrayList;
 
 
-public class ImageGridLayoutFragment extends Fragment implements AdapterView.OnItemClickListener {
+//TODO: 이미지 갯수가 많아지만 GC를 학대하니 RecyclerView로 변경하는게 좋아보인다.
+
+/**
+ *
+ */
+public class ImageGridLayoutFragment extends Fragment {
+
+
+    ArrayList<GridImageItem> arrayImage = new ArrayList<>();
+    final String TAG = this.getClass().getSimpleName();
+    AQuery aQuery;
+
 
     private static ImageGridLayoutFragment fragment = null;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM1 = "Path";
+    //private static String filePath;
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
+    private String filePath;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
@@ -45,9 +72,10 @@ public class ImageGridLayoutFragment extends Fragment implements AdapterView.OnI
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            filePath = getArguments().getString(ARG_PARAM1,"");
         }
+
+        aQuery = new AQuery( getContext() );
     }
 
     @Override
@@ -57,9 +85,9 @@ public class ImageGridLayoutFragment extends Fragment implements AdapterView.OnI
 
         final View v = inflater.inflate(R.layout.fragment_blank, container, false);
         gridLayout = (GridLayout)v.findViewById(R.id.gridLayout);
-        gridLayout.setDrawingCacheEnabled(true);
-        gridLayout.canScrollVertically(View.SCROLL_AXIS_VERTICAL);
 
+
+        getImages();
         return v;
     }
 
@@ -87,10 +115,76 @@ public class ImageGridLayoutFragment extends Fragment implements AdapterView.OnI
         mListener = null;
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+    private void getImages() {
+        String[] cols = new String[]{ MediaStore.Images.Media.DATA, MediaStore.Images.Media.BUCKET_DISPLAY_NAME };
+        Cursor cursor = getActivity().getContentResolver().query(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                cols ,
+                MediaStore.Images.Media.DATA + " like ? ",
+                new String[]{ "%" + filePath + "%" },
+                MediaStore.Images.Media.DATE_ADDED
+        );
+
+        while ( cursor.moveToNext() ) {
+            try {
+                String filePath = cursor.getString( cursor.getColumnIndex( MediaStore.Images.Media.DATA ) );
+                String imageName = cursor.getString( cursor.getColumnIndex( MediaStore.Images.Media.BUCKET_DISPLAY_NAME ) );
+                arrayImage.add( new GridImageItem( imageName, filePath ) );
+            } catch ( Exception e ) {
+                e.printStackTrace();
+            }
+        }
+        cursor.close();
+        for(int i =0;i<arrayImage.size();i++){
+            GridImageItem item = arrayImage.get(i);
+            View v = LayoutInflater.from(this.getContext()).inflate(R.layout.square_image_item, null);
+//            GridLayout.Spec rowSpec = GridLayout.spec(row);
+//            GridLayout.Spec columnSpec = GridLayout.spec(column);
+//
+//            GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams(rowSpec, columnSpec);
+//            layoutParams.width = ( int )getResources().getDimension(R.dimen._40sdp);
+            Log.d(TAG, "itemCount");
+            Log.d(TAG, "Name : " + item.getName());
+            Log.d(TAG, "Path : " + item.getPath());
+//            Log.d(TAG,"Name : "+item.getName());
+            ImageView img = (ImageView) v.findViewById(R.id.img);
+            TextView textView = (TextView) v.findViewById(R.id.text);
+            File file = new File(item.getPath());
+            aQuery.id( img ).image(file,125).width(225).clicked(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // show Dialog
+                    android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(getContext());
+
+                    builder.setTitle("파일업로드하시겠습니까")
+                    .setPositiveButton("확인", new AlertDialog.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+//                                    new FileUpLoad("URL",)
+                                }
+                            });
+                    android.support.v7.app.AlertDialog alertDialog = builder.create();
+                    alertDialog.setTitle("파일업로드하시겠습니까");
+
+
+
+                    if(!alertDialog.isShowing()){
+                        alertDialog.show();
+                    }
+
+                }
+            });
+
+            aQuery.id(textView).text(item.getName());
+            gridLayout.addView(v, i);
+        }
+
 
     }
+
 
     /**
      * This interface must be implemented by activities that contain this

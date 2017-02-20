@@ -2,12 +2,8 @@ package com.example.sslab.samplegroupapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.PowerManager;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -19,10 +15,9 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.sslab.samplegroupapplication.adapter.CommonTextView4ItemAdapter;
 import com.example.sslab.samplegroupapplication.data.activityList;
+import com.example.sslab.samplegroupapplication.imageFileView.ModeSettingActivity;
 import com.example.sslab.samplegroupapplication.samples.*;
 import com.example.sslab.samplegroupapplication.util.UncaughtExceptionHandlerApplication;
 import com.example.sslab.samplegroupapplication.webview.*;
@@ -97,6 +92,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
         items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
         items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
+        items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
 //        items.add(new activityList(MyCloudProviderActivity.class.getSimpleName(),MyCloudProviderActivity.class));                       // https://developer.android.com/samples/StorageProvider
 
 

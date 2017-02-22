@@ -124,6 +124,7 @@ public class PostFile extends AsyncTask<String,Integer,String> {
             FileInputStream mFileInputStream = new FileInputStream( file );
             dataOutputStream.writeBytes( "Content-Disposition: form-data; name=\"file\";filename=\"" + file.toURI() + "\"" + "\r\n" );
             dataOutputStream.writeBytes( "Content-Type: image/png;" + "\r\n" );
+            dataOutputStream.writeBytes("Content-Transfer-Encoding: binary" + "\r\n");
             dataOutputStream.writeBytes( "\r\n" );
 
             int bytesAvailable = mFileInputStream.available();

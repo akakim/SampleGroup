@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -21,6 +23,7 @@ import android.widget.TextView;
 import com.androidquery.AQuery;
 import com.example.sslab.samplegroupapplication.R;
 import com.example.sslab.samplegroupapplication.data.GridImageItem;
+import com.example.sslab.samplegroupapplication.data.PostFile;
 import com.example.sslab.samplegroupapplication.imageFileView.ImageShowActivity;
 import com.example.sslab.samplegroupapplication.widget.DialogBuilder;
 
@@ -39,7 +42,12 @@ public class ImageGridLayoutFragment extends Fragment {
     ArrayList<GridImageItem> arrayImage = new ArrayList<>();
     final String TAG = this.getClass().getSimpleName();
     AQuery aQuery;
-
+    Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            return false;
+        }
+    });
 
     private static ImageGridLayoutFragment fragment = null;
     // TODO: Rename parameter arguments, choose names that match
@@ -151,7 +159,7 @@ public class ImageGridLayoutFragment extends Fragment {
 //            Log.d(TAG,"Name : "+item.getName());
             ImageView img = (ImageView) v.findViewById(R.id.img);
             TextView textView = (TextView) v.findViewById(R.id.text);
-            File file = new File(item.getPath());
+            final File file = new File(item.getPath());
             aQuery.id( img ).image(file,125).width(225).clicked(new View.OnClickListener() {
 
                 @Override
@@ -164,6 +172,9 @@ public class ImageGridLayoutFragment extends Fragment {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 //                                    new FileUpLoad("URL",)
+                                    final String TEST_URL = "http://192.168.0.101:8080/AndroidPushTestServer/getImageFile";
+                                    final String FOR_PARK_URL ="http://125.176.35.110:8079/upload";
+                                    new PostFile( getContext(),FOR_PARK_URL,file,"",handler,1000).execute();
                                 }
                             });
                     android.support.v7.app.AlertDialog alertDialog = builder.create();
@@ -185,6 +196,11 @@ public class ImageGridLayoutFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDestroy() {
+        handler = null;
+        super.onDestroy();
+    }
 
     /**
      * This interface must be implemented by activities that contain this

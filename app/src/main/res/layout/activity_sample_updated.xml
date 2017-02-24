@@ -54,13 +54,6 @@
         android:text="target"
         android:layout_columnWeight="1"
         android:layout_rowSpan="1"
-        android:id="@+id/jungsTopTargetTextView" />
-
-    <TextView
-        android:layout_height="150dp"
-        android:text="target"
-        android:layout_columnWeight="1"
-        android:layout_rowSpan="1"
         android:id="@+id/jungsBottomTargetTextView"/>
     <Button
         android:layout_height="150dp"
@@ -70,5 +63,12 @@
         android:id="@+id/jungsAddButton"
 
         />
+
+    <TextView
+        android:layout_height="150dp"
+        android:text="target"
+        android:layout_columnWeight="1"
+        android:layout_rowSpan="1"
+        android:id="@+id/jungsTopTargetTextView" />
 
 </GridLayout>

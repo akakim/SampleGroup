@@ -132,14 +132,18 @@ public class PostFile extends AsyncTask<String,Integer,String> {
             int bufferSize = Math.min( bytesAvailable, maxBufferSize );
             byte[] buffer = new byte[bufferSize];
             int bytesRead = mFileInputStream.read( buffer, 0, bufferSize );
+            long count = 0;
             while ( bytesRead > 0 ) {
+
                 dataOutputStream.write( buffer, 0, bufferSize );
                 bytesAvailable = mFileInputStream.available();
                 bufferSize = Math.min( bytesAvailable, maxBufferSize );
                 bytesRead = mFileInputStream.read( buffer, 0, bufferSize );
+                count+=bytesRead;
                 rate *= bytesRead ;
                publishProgress((int)rate);
             }
+            Log.d(TAG,"count : "+ count );
             dataOutputStream.writeBytes( "\r\n" );
             mFileInputStream.close();
             dataOutputStream.flush();

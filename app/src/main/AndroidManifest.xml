@@ -97,7 +97,29 @@
         <activity android:name=".imageFileView.ModeSettingActivity" />
         <activity android:name=".imageFileView.FileShowActivity" />
         <activity android:name=".imageFileView.GalleryActivity" />
-        <activity android:name=".imageFileView.ImageShowActivity"></activity>
+        <activity android:name=".imageFileView.ImageShowActivity" />
+        <activity android:name=".samples.TabOrderringSample" />
+
+        <service
+            android:name=".firebaseSamples.FirebaseMessagingServiceSample"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".firebaseSamples.FirebaseInstanceIdServiceSample"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".samples.InspectorSamples.InspectorSampleListApp" />
+        <activity
+            android:name=".samples.InspectorSamples.showGallery"
+            android:label="@string/title_activity_show_gallery"
+            android:theme="@style/NoActionBar"></activity>
     </application>
 
 </manifest>

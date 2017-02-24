@@ -1,10 +1,14 @@
 package com.example.sslab.samplegroupapplication.common;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
+import com.example.sslab.samplegroupapplication.BaseActivity;
 import com.kakao.auth.IApplicationConfig;
 import com.kakao.auth.KakaoAdapter;
 import com.kakao.auth.KakaoSDK;
@@ -18,16 +22,19 @@ import com.kakao.util.helper.log.Logger;
 public class GlobalApplication extends Application  {
     private final String TAG = this.getClass().getSimpleName();
     private static volatile GlobalApplication instance = null;
-    private static volatile Activity currentActivity = null;
+    private static volatile BaseActivity currentActivity = null;
 
+    public Handler handler;
     NetComponent netComponent;
 
-    public static Activity getCurrentActivity() {
+    public static BaseActivity getCurrentActivity() {
+
+//        ActivityManager activityManager = ( ActivityManager )getSystemService(S)
         Logger.d("++ currentActivity : " + (currentActivity != null ? currentActivity.getClass().getSimpleName() : ""));
         return currentActivity;
     }
 
-    public static void setCurrentActivity(Activity currentActivity){
+    public static void setCurrentActivity(BaseActivity currentActivity){
         GlobalApplication.currentActivity = currentActivity;
     }
 
@@ -41,6 +48,11 @@ public class GlobalApplication extends Application  {
         return instance;
     }
 
+
+    @Override
+    public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
+        super.registerActivityLifecycleCallbacks(callback);
+    }
 
     private static class KakaoSDKAdapter extends KakaoAdapter {
         @Override
@@ -68,6 +80,12 @@ public class GlobalApplication extends Application  {
 //                .appModule( new AppModule() )
 //                .netModule( new NetModule("https://api.github.com"));
 
+    }
+
+    @Override
+    public Looper getMainLooper() {
+
+        return super.getMainLooper();
     }
 
     @Override

@@ -196,5 +196,7 @@
         c-0.177704,0.56826 -3.358078,11.482742 -11.072464,22.756622
         c-6.668747,9.746841 -13.590027,19.457977 -24.493088,19.659103
         c-10.713348,0.197403 -14.158287,-6.353043 -26.406677,-6.353043</string>
+    <string name="title_activity_show_gallery">showGallery</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>

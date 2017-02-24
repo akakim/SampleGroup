@@ -2,12 +2,16 @@ package com.example.sslab.samplegroupapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.ConsoleMessage;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -15,17 +19,26 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.sslab.samplegroupapplication.Manager.SharedManager;
+import com.example.sslab.samplegroupapplication.common.*;
+import com.example.sslab.samplegroupapplication.common.Constants;
 import com.example.sslab.samplegroupapplication.data.activityList;
+import com.example.sslab.samplegroupapplication.firebaseSamples.FirebaseMessagingServiceSample;
 import com.example.sslab.samplegroupapplication.imageFileView.ModeSettingActivity;
 import com.example.sslab.samplegroupapplication.samples.*;
+import com.example.sslab.samplegroupapplication.samples.InspectorSamples.InspectorSampleListApp;
 import com.example.sslab.samplegroupapplication.util.UncaughtExceptionHandlerApplication;
 import com.example.sslab.samplegroupapplication.webview.*;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends BaseActivity {
 
@@ -37,11 +50,36 @@ public class MainActivity extends BaseActivity {
     EditText searchEditText;
     private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
 
+
+    public Handler handler = null;
+
+    private Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("onCreate getName ", GlobalApplication.getCurrentActivity().getClass().getSimpleName());
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.list);
+
+
+        String token = FirebaseInstanceId.getInstance().getToken();
+        if(token == null){
+            token = "token is null";
+        }
+        Log.d("onCreateToken",token);
+        timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                if(SharedManager.getString(MainActivity.this, Constants.FCM_TOKEN).length() > 0 ){
+                    handler.sendEmptyMessage( 0 );
+                    timer.cancel();
+                }
+            }
+        };
+        timer.schedule( task,0,100);
+
         // searchSample 실패 .. ㅠ
 //        searchEditText = (EditText) findViewById(R.id.searchEditText);
 //        searchEditText.setFocusable(false);
@@ -62,7 +100,7 @@ public class MainActivity extends BaseActivity {
 //            }
 //        });
         mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-
+        FirebaseMessagingServiceSample.h = this.handler;
         Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(mUncaughtExceptionHandler,this));
 
 
@@ -93,6 +131,8 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
         items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
         items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
+        items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
+        items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
 //        items.add(new activityList(MyCloudProviderActivity.class.getSimpleName(),MyCloudProviderActivity.class));                       // https://developer.android.com/samples/StorageProvider
 
 
@@ -115,15 +155,35 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void startActivity(Intent intent) {
-        super.startActivity(intent);
+    protected void onStart() {
+        super.onStart();
+
+        handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message msg) {
+                switch ( msg.what){
+                    case 0:
+                        Toast.makeText(getApplicationContext(),"FCM TOKEN Created",Toast.LENGTH_SHORT ).show();
+                        break;
+                    case 1:
+                        showToast("something here");
+                        break;
+                }
+                return false;
+            }
+        });
 
     }
 
     @Override
-    public void startActivity(Intent intent, Bundle options) {
-        super.startActivity(intent, options);
+    protected void onDestroy() {
+        handler = null;
+        super.onDestroy();
+
     }
+
+
+
 
 
     @Override

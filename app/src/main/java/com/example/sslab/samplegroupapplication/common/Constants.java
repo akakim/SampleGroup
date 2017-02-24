@@ -5,5 +5,6 @@ package com.example.sslab.samplegroupapplication.common;
  */
 
 public class Constants {
+    public static final String FCM_TOKEN="FCM_TOKEN";
     public static String INS_URL_DEV     = "http://ins.autoground.tripath.work";
 }

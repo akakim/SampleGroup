@@ -1,15 +1,21 @@
 package com.example.sslab.samplegroupapplication;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.example.sslab.samplegroupapplication.common.GlobalApplication;
 import com.example.sslab.samplegroupapplication.data.ICFO;
+import com.example.sslab.samplegroupapplication.firebaseSamples.FirebaseMessagingServiceSample;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,42 +33,57 @@ import java.net.URL;
 
 public abstract class BaseActivity extends AppCompatActivity{
     protected ProgressDialog progressDialog;
+    public static final int ACTIVITY_REQUEST = 1;
+    public static final int FRAGMENT_REQUEST = 2;
     final String LOADING_SHOW = "LOADING_SHOW";
     final String REMOVE_SHOW = "REMOVE_SHOW";
 
 
     Toast mToast;
-    Handler handler = new Handler(){
+    public Handler basehandler = new Handler(){
         public void handleMessage(Message msg){
-            if(msg.obj instanceof String){
-                String strObj = (String)msg.obj;
-
-                switch (strObj){
-                    case LOADING_SHOW:
-                        break;
-                    case REMOVE_SHOW:
-                        break;
-                }
-
-            }else if(msg.obj instanceof Integer){
-                Integer intObj = (Integer)msg.obj;
-
-
-
-            }else if(msg.obj instanceof Double){
-                Double doubleObj = (Double)msg.obj;
-
-
+//            if(msg.obj instanceof String){
+//                String strObj = (String)msg.obj;
+//
+//                switch (strObj){
+//                    case LOADING_SHOW:
+//                        break;
+//                    case REMOVE_SHOW:
+//                        break;
+//                }
+//
+//            }else if(msg.obj instanceof Integer){
+//                Integer intObj = (Integer)msg.obj;
+//
+//
+//
+//            }else if(msg.obj instanceof Double){
+//                Double doubleObj = (Double)msg.obj;
+//
+//
+//            }
+            Log.d("message", msg.toString());
+            switch ( msg.what ){
+                case 0:
+                    showToast("Hell");
+                    break;
             }
         }
+
+
     };
 
 
-
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        GlobalApplication.setCurrentActivity( this );
+        FirebaseMessagingServiceSample.h = basehandler;
+    }
 
     @Override
     protected void onDestroy() {
-        handler = null; // 핸들러의 경우 쓰고나면 반드시 null처리를 해주자.
+        basehandler = null; // 핸들러의 경우 쓰고나면 반드시 null처리를 해주자.
         super.onDestroy();
     }
 
@@ -71,7 +92,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         Message targetMessage = Message.obtain();
         targetMessage.obj = LOADING_SHOW;
 
-        handler.removeMessages(1,targetMessage);
+        basehandler.removeMessages(1,targetMessage);
 
         if(progressDialog == null){
             progressDialog = new ProgressDialog(this);
@@ -85,7 +106,7 @@ public abstract class BaseActivity extends AppCompatActivity{
 
 //        targetMessage.set
 
-//        handler.removeMessages();
+//        basehandler.removeMessages();
 //
 
     }
@@ -102,7 +123,7 @@ public abstract class BaseActivity extends AppCompatActivity{
      * Toast 메세지를 보여준다.
      * @param msg
      */
-    protected void showToast(String msg) {
+    public void showToast(String msg) {
         if(mToast == null){
             mToast = Toast.makeText(BaseActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.setGravity(Gravity.CENTER, 0, 0);
@@ -134,6 +155,59 @@ public abstract class BaseActivity extends AppCompatActivity{
         HTTPURLConnectionTask URLConnectionTask = new HTTPURLConnectionTask(url);
         URLConnectionTask.execute(icfo);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Intent getData = data;
+        showToast(data.toString());
+
+        switch (requestCode){
+            case ACTIVITY_REQUEST:
+                break;
+            case FRAGMENT_REQUEST:
+                break;
+        }
+    }
+
+
+    public void showGalleryForActivity() {
+        if ( Build.VERSION.SDK_INT < 19 ) {
+            Intent intent = new Intent( Intent.ACTION_GET_CONTENT );
+            intent.addCategory( Intent.CATEGORY_OPENABLE );
+            intent.setType( "image/*" );
+            startActivityForResult( intent, ACTIVITY_REQUEST );
+        } else {
+            Intent intent = new Intent( Intent.ACTION_OPEN_DOCUMENT );
+            intent.addCategory( Intent.CATEGORY_OPENABLE );
+            intent.setType( "image/*" );
+            startActivityForResult( intent, ACTIVITY_REQUEST );
+        }
+    }
+
+
+    /**
+     * 버전별로 갤러리를 띄우는 양식
+     * <p/>
+     * 킷캣 이후로 파일 첨부 방식이 변경되어 버전별로 쪼개줘야 한다(현재처럼 단일 기기만 쓸 땐 큰 의미 없음)
+     * <p/>
+     * 현재 사용되지 않음(파일 탐색기 형식을 사용)
+     */
+    public void showGalleryForFragment() {
+        if ( Build.VERSION.SDK_INT < 19 ) {
+            Intent intent = new Intent( Intent.ACTION_GET_CONTENT );
+            intent.addCategory( Intent.CATEGORY_OPENABLE );
+            intent.setType( "image/*" );
+            startActivityForResult( intent, FRAGMENT_REQUEST );
+        } else {
+            Intent intent = new Intent( Intent.ACTION_OPEN_DOCUMENT );
+            intent.addCategory( Intent.CATEGORY_OPENABLE );
+            intent.setType( "image/*" );
+            startActivityForResult( intent, FRAGMENT_REQUEST );
+        }
+    }
+
     public abstract void responseData(JSONObject jsonObject);
 
     private class HTTPURLConnectionTask extends AsyncTask<ICFO,Integer,Integer>{

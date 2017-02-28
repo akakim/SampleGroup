@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dev_focus_sample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sslab.samplegroupapplication.samples.InspectorSamples.DevFocusSampleActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/topLayout">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:nextFocusForward="@+id/editText1"
+                android:text="11111"
+                android:tag="focusForwardEditText1"
+                android:focusable="true"
+                android:background="@android:drawable/btn_default"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2"
+                android:layout_below="@id/button1"
+                android:layout_toRightOf="@id/editText1"
+                android:nextFocusForward="@+id/button1"
+                android:text="22222"
+                android:tag="focusForwardButton1"
+                android:focusable="true"
+                android:background="@android:drawable/btn_default"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@id/editText1"
+                android:layout_alignBottom="@+id/button2"
+                android:nextFocusForward="@+id/button2"
+                android:layout_alignParentLeft="true"
+                android:text="123"
+               android:tag="focusForwardbutton2"
+                android:inputType="number"
+                />
+    </RelativeLayout>
+
+
+</RelativeLayout>

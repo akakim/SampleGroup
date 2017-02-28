@@ -119,7 +119,9 @@
         <activity
             android:name=".samples.InspectorSamples.showGallery"
             android:label="@string/title_activity_show_gallery"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".samples.InspectorSamples.DevFocusSampleActivity" />
+        <activity android:name=".samples.InspectorSamples.GetGalleryActivity"></activity>
     </application>
 
 </manifest>

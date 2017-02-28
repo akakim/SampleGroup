@@ -25,7 +25,16 @@
         android:id="@+id/nameValue"
         android:layout_toRightOf="@id/nameText"
         android:singleLine="true"
-        android:textColor="#000"/>
+        android:textColor="#000"
+        android:imeOptions="actionNext"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextActivity"
+        android:layout_toRightOf="@id/nameValue"
+        android:text="next_button"
+        />
 
 
     <LinearLayout

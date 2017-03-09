@@ -33,6 +33,7 @@ import java.net.URI;
 
 public class GetGalleryActivity extends AppCompatActivity implements View.OnClickListener {
 
+    final String TAG= this.getClass().getSimpleName();
     Button showGallery;
     ImageView imageView;
     TextView fileName;
@@ -125,20 +126,34 @@ public class GetGalleryActivity extends AppCompatActivity implements View.OnClic
                     String appPath = "" ;
                     String fileName = "";
                     final Uri dataUri = data.getData();
-                    try {
-                        Cursor cursor;
-                        cursor = getContentResolver().query(dataUri, null, null, null, null);
-                        int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
 
-                        if (cursor != null && cursor.moveToFirst()) {
-                            fileName = cursor.getString(nameIndex);
+                    if("content".equals(dataUri.getScheme())) {
+                        try {
+                            Cursor cursor;
+                            cursor = getContentResolver().query(dataUri, null, null, null, null);
+                            int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+
+                            if (cursor != null && cursor.moveToFirst()) {
+                                fileName = cursor.getString(nameIndex);
+                            }
+
+                            appPath = this.getFilesDir().toString() + "/";
+                            new FileCopyTask(this, dataUri, this.handler).execute(appPath + fileName);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
+                    }else if("file".equals(dataUri.getScheme())){
 
-                        appPath = this.getFilesDir().toString()+"/";
-                        new FileCopyTask(this,dataUri,this.handler).execute(appPath+fileName);
+                        appPath = this.getFilesDir().toString() + "/";
+                        fileName = dataUri.getLastPathSegment();
+                        new FileCopyTask(this, dataUri, this.handler).execute(appPath + fileName);
+                        Log.d(TAG,"");
+                        Log.d("getPath()",dataUri.getPath());
+                        Log.d("getLastPathSegment()",dataUri.getLastPathSegment());
+                        Log.d("getAuthority()",dataUri.getAuthority());
+                        Log.d("getHost()",dataUri.getHost());
 
-                    }catch (Exception e ) {
-                        e.printStackTrace();
                     }
 //                    Log.d("uri",dataUri.toString());
 //                        Log.d("uri",dataUri.getPath());
@@ -277,7 +292,7 @@ public class GetGalleryActivity extends AppCompatActivity implements View.OnClic
 //            	intent.setType("image/jpeg");
 //            	intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(getFile));
 //            	startActivityForResult(Intent.createChooser(intent, "Share via:"), 3);
-            Intent intent = new Intent( Intent.ACTION_OPEN_DOCUMENT );
+            Intent intent = new Intent( Intent.ACTION_GET_CONTENT );
             intent.addCategory( Intent.CATEGORY_OPENABLE );
             intent.setType( "image/*" );
             startActivityForResult( intent, 3 );

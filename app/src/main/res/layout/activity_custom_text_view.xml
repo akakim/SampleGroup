@@ -42,4 +42,15 @@
         android:layout_columnSpan="2"
         android:gravity="right"
         android:id="@+id/editNumber" />
+
+
+    <Spinner android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/postFixEmailSpinner" />
+    <EditText
+        android:layout_gravity="fill_horizontal"
+        android:background="@drawable/textfield_selector"
+        android:visibility="invisible"
+        android:id="@+id/postFixEmailEditText"
+        />
 </GridLayout>

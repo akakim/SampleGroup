@@ -8,11 +8,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
 import com.example.sslab.samplegroupapplication.BaseActivity;
 import com.kakao.auth.IApplicationConfig;
 import com.kakao.auth.KakaoAdapter;
 import com.kakao.auth.KakaoSDK;
 import com.kakao.util.helper.log.Logger;
+import io.fabric.sdk.android.Fabric;
 
 
 /**
@@ -72,9 +75,13 @@ public class GlobalApplication extends Application  {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this,new Crashlytics());
+        Fabric.with(this, new Answers());
+
         Log.d(TAG,"onCreate() ");
         // 세션을 초기화한다.
         instance = this;
+
         KakaoSDK.init(new KakaoSDKAdapter());
 //        netComponent = DaggerNetComponent.builder()
 //                .appModule( new AppModule() )

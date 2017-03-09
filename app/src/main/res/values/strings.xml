@@ -12,6 +12,16 @@
         <item>Nexus8</item>
         <item>Nexus9</item>
     </string-array>
+    <string-array name="emailPostFix">
+        <item>gmail.com</item>
+        <item>daum.net</item>
+        <item>naver.com</item>
+        <item>yahoo.com</item>
+        <item>nate.com</item>
+        <item>선택하시오</item>
+    </string-array>
+
+
     <string name="title_activity_android_test">AndroidTestActivity</string>
 
 

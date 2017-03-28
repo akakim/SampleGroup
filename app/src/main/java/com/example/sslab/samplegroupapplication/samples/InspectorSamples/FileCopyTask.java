@@ -86,6 +86,7 @@ public class FileCopyTask extends AsyncTask<String,String,String> {
             out.close();
         }catch (FileNotFoundException fileException){
             Log.e(TAG,context.getApplicationInfo().className+" can not file open");
+            fileException.printStackTrace();
         }catch (Exception e ){
 
             e.printStackTrace();

@@ -2,43 +2,36 @@ package com.example.sslab.samplegroupapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.database.DataSetObserver;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.ConsoleMessage;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sslab.samplegroupapplication.Manager.SharedManager;
 import com.example.sslab.samplegroupapplication.common.*;
-import com.example.sslab.samplegroupapplication.common.Constants;
 import com.example.sslab.samplegroupapplication.data.activityList;
-import com.example.sslab.samplegroupapplication.firebaseSamples.FirebaseMessagingServiceSample;
 import com.example.sslab.samplegroupapplication.imageFileView.ModeSettingActivity;
 import com.example.sslab.samplegroupapplication.samples.*;
 import com.example.sslab.samplegroupapplication.samples.InspectorSamples.InspectorSampleListApp;
-import com.example.sslab.samplegroupapplication.util.UncaughtExceptionHandlerApplication;
 import com.example.sslab.samplegroupapplication.webview.*;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.example.sslab.samplegroupapplication.widget.CustomListView;
+import com.example.sslab.samplegroupapplication.widget.CustomTextView;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainActivity extends BaseActivity {
 
@@ -46,12 +39,12 @@ public class MainActivity extends BaseActivity {
     ArrayList<activityList> items = new ArrayList<>();
     ArrayList<activityList> filteredItems = new ArrayList<>();
     ListViewAdapter adapter;
-    ListView listView;
+    CustomListView listView;
     EditText searchEditText;
     private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
 
 
-    public Handler handler = null;
+    public Handler handler = new Handler();
 
     private Timer timer;
 
@@ -60,25 +53,25 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         Log.d("onCreate getName ", GlobalApplication.getCurrentActivity().getClass().getSimpleName());
         setContentView(R.layout.activity_main);
-        listView = (ListView) findViewById(R.id.list);
+        listView = (CustomListView) findViewById(R.id.list);
 
 
-        String token = FirebaseInstanceId.getInstance().getToken();
-        if(token == null){
-            token = "token is null";
-        }
-        Log.d("onCreateToken",token);
-        timer = new Timer();
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                if(SharedManager.getString(MainActivity.this, Constants.FCM_TOKEN).length() > 0 ){
-                    handler.sendEmptyMessage( 0 );
-                    timer.cancel();
-                }
-            }
-        };
-        timer.schedule( task,0,100);
+//        String token = FirebaseInstanceId.getInstance().getToken();
+//        if(token == null){
+//            token = "token is null";
+//        }
+//        Log.d("onCreateToken",token);
+//        timer = new Timer();
+//        TimerTask task = new TimerTask() {
+//            @Override
+//            public void run() {
+//                if(SharedManager.getString(MainActivity.this, Constants.FCM_TOKEN).length() > 0 ){
+//                    handler.sendEmptyMessage( 0 );
+//                    timer.cancel();
+//                }
+//            }
+//        };
+//        timer.schedule( task,0,100);
 
         // searchSample 실패 .. ㅠ
 //        searchEditText = (EditText) findViewById(R.id.searchEditText);
@@ -99,9 +92,9 @@ public class MainActivity extends BaseActivity {
 //
 //            }
 //        });
-        mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-        FirebaseMessagingServiceSample.h = this.handler;
-        Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(mUncaughtExceptionHandler,this));
+//        mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
+//        FirebaseMessagingServiceSample.h = this.handler;
+//        Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(mUncaughtExceptionHandler,this));
 
 
         items.add(new activityList(ThreadMessageQueueSample.class.getSimpleName(), ThreadMessageQueueSample.class));                    // 스레드와 큐.. 즉, 동기화된 네트워크 통신을 하고싶었다.
@@ -117,28 +110,39 @@ public class MainActivity extends BaseActivity {
         /**
          * 위와 마찬가지이다.
          */
-        items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
-        items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));     // expandable list view 의 샘플 .
-        items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));     // swipe 이벤트가 발생하면
-        items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
-        items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
-        items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
-        items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));                           // 새로운 네트워크모듈을 생성
-        items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));                                   // 새로운 네트워크모듈을 생성
-        items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
-        items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
-        items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
-        items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
-        items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
-        items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
-        items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
-        items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
+                items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));     // expandable list view 의 샘플 .
+                items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));     // swipe 이벤트가 발생하면
+                items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
+                items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
+                items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
+                items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));                           // 새로운 네트워크모듈을 생성
+                items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));                                   // 새로운 네트워크모듈을 생성
+                items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
+                items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
+                items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
+                items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
+                items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
+                items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
+                items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
+                items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
+                filteredItems.addAll(items);
+                adapter.notifyDataSetChanged();
+            }
+        },5000);
+
 //        items.add(new activityList(MyCloudProviderActivity.class.getSimpleName(),MyCloudProviderActivity.class));                       // https://developer.android.com/samples/StorageProvider
 
 
         filteredItems.addAll(items);
+        items.clear();
+
 //        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),BitmapSamplesActivity.class));
-        adapter = new ListViewAdapter(this, android.R.layout.simple_list_item_1, filteredItems);
+        adapter = new ListViewAdapter(this, -1, filteredItems);
 
 
         listView.setAdapter(adapter);
@@ -207,66 +211,95 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    private class ListViewAdapter extends ArrayAdapter<activityList> implements Filterable{
+    private class ListViewAdapter extends ArrayAdapter<activityList>  {
+
+
+
 
         public ListViewAdapter(Context context, int resource, List<activityList> objects) {
-            super(context, resource, objects);
+            super(context, -1, objects);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            View v = super.getView(position, convertView, parent);
+            View v = convertView;
+            Log.d(getClass().getSimpleName(),"getView() start ");
+            if(v == null){
+                v= LayoutInflater.from(getContext()).inflate(R.layout.mylayout,null);
+            }
+
+
             final activityList item = getItem(position);
-            TextView textView = (TextView)v.findViewById(android.R.id.text1);
+            CustomTextView textView = (CustomTextView)v.findViewById(R.id.customTextView);
             textView.setText(item.getActivityName());
             return v;
         }
 
-        @NonNull
         @Override
-        public Filter getFilter() {
-            Filter filter = new Filter() {
-
-
-                @Override
-                protected FilterResults performFiltering(CharSequence charSequence) {
-                    FilterResults results = new FilterResults();
-                    ArrayList<activityList> FilteredArrayNames = new ArrayList<activityList>();
-
-
-                    charSequence = charSequence.toString().toLowerCase();
-
-                    for (int i = 0; i < items.size(); i++) {
-                        activityList item = items.get(i);
-                        if (item.getActivityName().toLowerCase().startsWith(charSequence.toString()))  {
-                            FilteredArrayNames.add(item);
-                        }
-                    }
-
-                    results.count = FilteredArrayNames.size();
-                    results.values = FilteredArrayNames;
-                    Log.d("VALUES", results.values.toString());
-
-
-                    return results;
-                }
-
-                @Override
-                protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                    filteredItems = (ArrayList<activityList>) filterResults.values;
-
-                    listView.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            listView.invalidate();
-                            adapter.notifyDataSetChanged();
-                        }
-                    });
-                }
-            };
-            return filter;
+        public void registerDataSetObserver(DataSetObserver observer) {
+            super.registerDataSetObserver(observer);
         }
+
+
+
+        @Override
+        public void setNotifyOnChange(boolean notifyOnChange) {
+            super.setNotifyOnChange(notifyOnChange);
+        }
+
+
+        @Override
+        public void notifyDataSetChanged() {
+            Log.d(getClass().getSimpleName(),"notifyDataSetChanged()");
+            super.notifyDataSetChanged();
+        }
+
+        //
+//        @NonNull
+//        @Override
+//        public Filter getFilter() {
+//            Filter filter = new Filter() {
+//
+//
+//                @Override
+//                protected FilterResults performFiltering(CharSequence charSequence) {
+//                    FilterResults results = new FilterResults();
+//                    ArrayList<activityList> FilteredArrayNames = new ArrayList<activityList>();
+//
+//
+//                    charSequence = charSequence.toString().toLowerCase();
+//
+//                    for (int i = 0; i < items.size(); i++) {
+//                        activityList item = items.get(i);
+//                        if (item.getActivityName().toLowerCase().startsWith(charSequence.toString()))  {
+//                            FilteredArrayNames.add(item);
+//                        }
+//                    }
+//
+//                    results.count = FilteredArrayNames.size();
+//                    results.values = FilteredArrayNames;
+//                    Log.d("VALUES", results.values.toString());
+//
+//
+//                    return results;
+//                }
+//
+//                @Override
+//                protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+//                    filteredItems = (ArrayList<activityList>) filterResults.values;
+//
+//                    listView.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            listView.invalidate();
+//                            adapter.notifyDataSetChanged();
+//                        }
+//                    });
+//                }
+//            };
+//            return filter;
+//        }
 
     }
 }

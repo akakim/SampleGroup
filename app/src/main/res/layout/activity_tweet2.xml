@@ -10,4 +10,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sslab.samplegroupapplication.samples.InspectorSamples.AnswersActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_invite"
+        android:text="Answer invite"
+        android:layout_alignParentTop="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_rating"
+        android:text="Answer rating"
+        android:layout_toRightOf="@id/btn_invite"/>
 </RelativeLayout>

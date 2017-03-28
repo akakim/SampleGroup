@@ -34,6 +34,8 @@ public class InspectorSampleListApp extends BaseActivity {
         items.add(new activityList(GetGalleryActivity.class.getSimpleName(),GetGalleryActivity.class));
         items.add(new activityList(CrashlyticsActivity.class.getSimpleName(),CrashlyticsActivity.class));
         items.add(new activityList(AnswersActivity.class.getSimpleName(),AnswersActivity.class));
+        items.add(new activityList(RecyclerViewActivity.class.getSimpleName(),RecyclerViewActivity.class));
+
         adapter = new ListViewAdapter(this,android.R.layout.simple_list_item_1,items);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {

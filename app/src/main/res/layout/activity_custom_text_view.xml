@@ -53,4 +53,20 @@
         android:visibility="invisible"
         android:id="@+id/postFixEmailEditText"
         />
+
+    <Button
+        android:layout_gravity="fill_horizontal"
+        android:text="getPackageName"
+        android:id="@+id/getPackageNameBtn"
+        />
+    <TextView
+        android:layout_gravity="fill_horizontal"
+        android:text=""
+        android:id="@+id/packageName"
+        />
+    <Button
+        android:layout_gravity="fill_horizontal"
+        android:text="getPackageName"
+        android:id="@+id/restartBtn"
+        />
 </GridLayout>

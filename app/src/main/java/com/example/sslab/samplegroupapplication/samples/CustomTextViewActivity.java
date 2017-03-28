@@ -1,6 +1,9 @@
 package com.example.sslab.samplegroupapplication.samples;
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,18 +17,22 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.R;
 import com.example.sslab.samplegroupapplication.widget.TextNumber;
 
+import java.util.Iterator;
 import java.util.List;
 
-public class CustomTextViewActivity extends AppCompatActivity {
+public class CustomTextViewActivity extends AppCompatActivity implements View.OnClickListener {
     TextNumber textNumber;
     TextView textView;
 
     Spinner postFixEmailSpinner;
     String [] arrayStr;
+
+    TextView packageTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +70,43 @@ public class CustomTextViewActivity extends AppCompatActivity {
 
             }
         });
+
+        findViewById( R.id.getPackageNameBtn ).setOnClickListener( this );
+        findViewById( R.id.restartBtn ).setOnClickListener( this );
+
+        packageTextView = ( TextView )findViewById(R.id.packageName);
         textView.setText(textNumber.getText());
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch ( v.getId() ){
+            case R.id.getPackageNameBtn :
+                ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+
+                String name = getApplication().getPackageName();
+
+                List <ActivityManager.RunningAppProcessInfo> list = manager.getRunningAppProcesses();
+                Iterator<ActivityManager.RunningAppProcessInfo> iter = list.iterator();
+                while (iter.hasNext()){
+                    ActivityManager.RunningAppProcessInfo info = iter.next();
+                    if (info.processName.equals(name)) {
+                        packageTextView.setText(info.processName);
+                        Log.d(this.getClass().getSimpleName(),"process Name : " + name );
+                    }
+                }
+                break;
+            case R.id.restartBtn:
+                if(packageTextView.getText().toString().equals("")){
+                    Toast.makeText(this," packageName is null ",Toast.LENGTH_SHORT).show();
+                }else {
+                    ActivityManager restartManager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+//                    restartManager.killBackgroundProcesses(packageTextView.getText().toString());
+
+                    Toast.makeText(this," package backgroundProcess is eliminated ",Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
     }
 
     private class EmailAdapter extends ArrayAdapter<String>{

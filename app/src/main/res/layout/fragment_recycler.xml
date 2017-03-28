@@ -1,0 +1,35 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sslab.samplegroupapplication.samples.InspectorSamples.RecyclerFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:checkedButton="@+id/linear_layout_rb"
+                android:id="@+id/radioGroup">
+                <RadioButton android:id="@+id/linear_layout_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Linear Layout"/>
+                <RadioButton android:id="@+id/grid_layout_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grid Layout"/>
+            </RadioGroup>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/radioGroup"
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+</ScrollView>

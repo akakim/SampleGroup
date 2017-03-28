@@ -69,6 +69,7 @@ public class CrashlyticsActivity extends AppCompatActivity implements View.OnCli
 
     }
 
+
     // TODO: Move this method and use your own event name to track your key metrics
     public void onKeyMetric() {
         // TODO: Use your own string attributes to track common values over time
@@ -76,6 +77,19 @@ public class CrashlyticsActivity extends AppCompatActivity implements View.OnCli
         Answers.getInstance().logCustom(new CustomEvent("Video Played")
                 .putCustomAttribute("Category", "Comedy")
                 .putCustomAttribute("Length", 350));
+
+
+        Crashlytics.setUserIdentifier("SampleGroupApplication");
+        Crashlytics.setUserEmail("kyolyeong.kim@tripath.co.kr");
+        Crashlytics.setUserName("Kyo");
+
+        String str [] = "Index/Hello/hhh".split("/");
+        for(int i =0;i<=str.length;i++) {
+            Log.d("indexoutOfRange", str[i]);
+            Crashlytics.setInt("int",i);
+            Crashlytics.setString("Value",str[i]);
+         }
+
 
     }
 
@@ -97,10 +111,22 @@ public class CrashlyticsActivity extends AppCompatActivity implements View.OnCli
                     break;
             }
         }catch (Exception e ){
-
             e.printStackTrace();
             Crashlytics.logException(e);
-//            Crashlytics.crash();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        Crashlytics.logException();
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
+
+
     }
 }

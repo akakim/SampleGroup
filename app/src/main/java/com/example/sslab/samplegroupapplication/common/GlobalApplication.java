@@ -75,8 +75,8 @@ public class GlobalApplication extends Application  {
     @Override
     public void onCreate() {
         super.onCreate();
-        Fabric.with(this,new Crashlytics());
-        Fabric.with(this, new Answers());
+//        Fabric.with(this,new Crashlytics());
+        Fabric.with(this, new Answers(), new Crashlytics());
 
         Log.d(TAG,"onCreate() ");
         // 세션을 초기화한다.

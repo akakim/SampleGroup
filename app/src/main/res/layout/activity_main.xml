@@ -25,7 +25,7 @@
             android:text="selectBox"/>
     </LinearLayout>
 
-    <ListView
+    <com.example.sslab.samplegroupapplication.widget.CustomListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/list"/>

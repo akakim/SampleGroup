@@ -32,51 +32,51 @@ public class CustomListView extends ListView {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    @Override
-    public void requestLayout() {
-        Log.d(TAG,"requestLyaout()");
-        super.requestLayout();
-    }
-
-
-    @Override
-    protected void onAttachedToWindow() {
-        Log.d(TAG,"onAttachedToWindow()");
-        super.onAttachedToWindow();
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        Log.d(TAG,"onLayout()");
-        super.onLayout(changed, left, top, right, bottom);
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        Log.d(TAG,"onMeasure()");
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        Log.d(TAG,"onDraw()");
-
-        super.onDraw(canvas);
-    }
-
-    @Override
-    public void setAdapter(ListAdapter adapter) {
-        Log.d(TAG,"setAdapter()");
-        super.setAdapter(adapter);
-    }
-
-    @Override
-    protected void layoutChildren() {
-        Log.d(TAG,"layoutChildren");
-        super.layoutChildren();
-        Log.d(TAG,"after layoutChildren");
-
-    }
+//    @Override
+//    public void requestLayout() {
+//        Log.d(TAG,"requestLyaout()");
+//        super.requestLayout();
+//    }
+//
+//
+//    @Override
+//    protected void onAttachedToWindow() {
+//        Log.d(TAG,"onAttachedToWindow()");
+//        super.onAttachedToWindow();
+//    }
+//
+//    @Override
+//    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+//        Log.d(TAG,"onLayout()");
+//        super.onLayout(changed, left, top, right, bottom);
+//    }
+//
+//    @Override
+//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//        Log.d(TAG,"onMeasure()");
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+//    }
+//
+//    @Override
+//    protected void onDraw(Canvas canvas) {
+//        Log.d(TAG,"onDraw()");
+//
+//        super.onDraw(canvas);
+//    }
+//
+//    @Override
+//    public void setAdapter(ListAdapter adapter) {
+//        Log.d(TAG,"setAdapter()");
+//        super.setAdapter(adapter);
+//    }
+//
+//    @Override
+//    protected void layoutChildren() {
+//        Log.d(TAG,"layoutChildren");
+//        super.layoutChildren();
+//        Log.d(TAG,"after layoutChildren");
+//
+//    }
 
 
 

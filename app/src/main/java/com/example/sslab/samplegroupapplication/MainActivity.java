@@ -111,29 +111,31 @@ public class MainActivity extends BaseActivity {
          * 위와 마찬가지이다.
          */
 
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
-                items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));     // expandable list view 의 샘플 .
-                items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));     // swipe 이벤트가 발생하면
-                items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
-                items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
-                items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
-                items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));                           // 새로운 네트워크모듈을 생성
-                items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));                                   // 새로운 네트워크모듈을 생성
-                items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
-                items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
-                items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
-                items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
-                items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
-                items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
-                items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
-                items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
-                filteredItems.addAll(items);
-                adapter.notifyDataSetChanged();
-            }
-        },5000);
+        items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
+        items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));     // expandable list view 의 샘플 .
+        items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));     // swipe 이벤트가 발생하면
+        items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
+        items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
+        items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));                           // 새로운 네트워크모듈을 생성
+        items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));                                   // 새로운 네트워크모듈을 생성
+        items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
+        items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
+        items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
+        items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
+        items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
+        items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
+        items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
+
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//                filteredItems.addAll(items);
+//                adapter.notifyDataSetChanged();
+//            }
+//        },5000);
 
 //        items.add(new activityList(MyCloudProviderActivity.class.getSimpleName(),MyCloudProviderActivity.class));                       // https://developer.android.com/samples/StorageProvider
 

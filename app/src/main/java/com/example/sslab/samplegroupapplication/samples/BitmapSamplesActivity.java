@@ -12,6 +12,7 @@ import com.example.sslab.samplegroupapplication.adapter.ActivityViewListAdapter;
 import com.example.sslab.samplegroupapplication.bitmapsSVGAnim.BitmapAsynchTaskActivity;
 import com.example.sslab.samplegroupapplication.bitmapsSVGAnim.ExampleActivity;
 import com.example.sslab.samplegroupapplication.bitmapsSVGAnim.GalleryAndViewPagerActivity;
+import com.example.sslab.samplegroupapplication.bitmapsSVGAnim.useableProgressActivity;
 import com.example.sslab.samplegroupapplication.data.activityList;
 
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class BitmapSamplesActivity extends AppCompatActivity {
 
         items.add(new activityList("비트맵 비동기 activity",BitmapAsynchTaskActivity.class));
         items.add(new activityList(ExampleActivity.class.getSimpleName(),ExampleActivity.class));
+        items.add(new activityList(useableProgressActivity.class.getSimpleName(),useableProgressActivity.class));
 //        items.add(new activityList(GalleryAndViewPagerActivity.class.getSimpleName(),GalleryAndViewPagerActivity.class));
 
 

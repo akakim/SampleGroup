@@ -127,11 +127,22 @@
         <activity android:name=".samples.InspectorSamples.DevFocusSampleActivity" />
         <activity android:name=".samples.InspectorSamples.GetGalleryActivity" />
         <activity android:name=".samples.InspectorSamples.CrashlyticsActivity" />
-        <activity android:name=".samples.InspectorSamples.TweetActivity\" />
         <activity android:name=".samples.InspectorSamples.AnswersActivity" />
         <activity android:name=".samples.InspectorSamples.SyncUserDataActivity" />
         <activity android:name=".samples.InspectorSamples.RecyclerViewActivity" />
-        <activity android:name=".bitmapsSVGAnim.useableProgressActivity"></activity>
+        <activity android:name=".bitmapsSVGAnim.useableProgressActivity" />
+        <activity android:name=".webview.javaScriptSampleActivity" />
+        <activity android:name=".samples.LambdaExpressionActivity"></activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_files"/>
+        </provider>
     </application>
 
 </manifest>

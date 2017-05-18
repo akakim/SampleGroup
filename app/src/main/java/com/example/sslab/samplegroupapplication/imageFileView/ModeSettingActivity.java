@@ -44,15 +44,15 @@ public class ModeSettingActivity extends AppCompatActivity {
         items.add(new ActivityListBundleOption("GridViewMode",FileShowActivity.class,gridViewModeBundle));
 
 
-        ActivityViewListAdapter adapter = new ActivityViewListAdapter(this,android.R.layout.simple_list_item_1, items);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(ModeSettingActivity.this,items.get(position).getaClass());
-                i.putExtras(items.get(position).getBundle());
-                startActivity(i);
-            }
-        });
+//        ActivityViewListAdapter adapter = new ActivityViewListAdapter(this,android.R.layout.simple_list_item_1, items);
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent i = new Intent(ModeSettingActivity.this,items.get(position).getaClass());
+//                i.putExtras(items.get(position).getBundle());
+//                startActivity(i);
+//            }
+//        });
     }
 }

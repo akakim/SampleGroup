@@ -28,7 +28,7 @@ public class GlobalApplication extends Application  {
     private static volatile BaseActivity currentActivity = null;
 
     public Handler handler;
-    NetComponent netComponent;
+//    NetComponent netComponent;
 
     public static BaseActivity getCurrentActivity() {
 

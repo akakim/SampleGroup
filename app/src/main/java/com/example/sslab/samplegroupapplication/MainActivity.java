@@ -14,9 +14,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sslab.samplegroupapplication.adapter.ActivityViewListAdapter;
 import com.example.sslab.samplegroupapplication.common.*;
 import com.example.sslab.samplegroupapplication.data.activityList;
 import com.example.sslab.samplegroupapplication.imageFileView.ModeSettingActivity;
@@ -38,7 +40,7 @@ public class MainActivity extends BaseActivity {
     final String TAG = getClass().getSimpleName();
     ArrayList<activityList> items = new ArrayList<>();
     ArrayList<activityList> filteredItems = new ArrayList<>();
-    ListViewAdapter adapter;
+    ActivityViewListAdapter  adapter;
     CustomListView listView;
     EditText searchEditText;
     private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
@@ -127,6 +129,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
         items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
         items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
+        items.add(new activityList(LambdaExpressionActivity.class.getSimpleName() , LambdaExpressionActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override
@@ -144,10 +147,11 @@ public class MainActivity extends BaseActivity {
         items.clear();
 
 //        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),BitmapSamplesActivity.class));
-        adapter = new ListViewAdapter(this, -1, filteredItems);
+        adapter = new ActivityViewListAdapter(this, -1, filteredItems);
 
 
         listView.setAdapter(adapter);
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

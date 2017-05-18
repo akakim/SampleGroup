@@ -41,8 +41,15 @@
         android:layout_height="wrap_content"
         android:layout_columnSpan="2"
         android:gravity="right"
+        android:text="1000"
         android:id="@+id/editNumber" />
 
+    <com.example.sslab.samplegroupapplication.widget.EditNumber
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:gravity="right"
+        android:text="0"/>
 
     <Spinner android:layout_width="wrap_content"
         android:layout_height="wrap_content"

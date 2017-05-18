@@ -20,6 +20,7 @@ public class WebViewActivity extends AppCompatActivity {
 //        consoleMessage.message(ConsoleMessage.MessageLevel.DEBUG, )
         webChromeClient = new WebChromeClient();
         webView = ( WebView )findViewById( R.id.webView );
+        webView.addJavascriptInterface(new WebInterface(this),"android");
         webView.loadUrl("file:///android_asset/www/index.html");
         webView.getSettings().setJavaScriptEnabled( true );
         webView.setWebChromeClient( webChromeClient);

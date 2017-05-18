@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
+//apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'io.fabric'
 // The sample build uses multiple directories to
 // keep boilerplate and common code separate from
@@ -18,12 +18,22 @@ android {
     defaultConfig {
         applicationId "com.example.sslab.samplegroupapplication"
         minSdkVersion 22
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true        // SVG 서포팅 라이브러리를 사용하기 위함.
 
+//        jackOptions {
+//            enabled false
+//        }
+
+
     }
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
     buildTypes {
         debug {
             debuggable true
@@ -120,7 +130,7 @@ dependencies {
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile 'com.intuit.sdp:sdp-android:1.0.3'
     testCompile 'junit:junit:4.12'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

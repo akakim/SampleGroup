@@ -24,6 +24,7 @@ public class WebViewSampleGroupActivity extends AppCompatActivity {
 
         listView = ( ListView )findViewById( R.id.listView);
 
+        items.add(new activityList (javaScriptSampleActivity.class.getSimpleName(), WebViewVideoSample.class));
 //        items.add( new activityList(WebViewVideoSample.class.getSimpleName(), WebViewVideoSample.class)); 에러있음 수정해야됨 .
         
 

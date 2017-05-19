@@ -36,6 +36,9 @@ public class EfficientListActivity extends AppCompatActivity {
             }
         });
         items.add(new activityList(LooperActivity.class.getSimpleName(),LooperActivity.class));
+        items.add(new activityList(HandlerExampleActivity.class.getSimpleName(),HandlerExampleActivity.class));
+        items.add(new activityList(HandlerCallbackActivity.class.getSimpleName(),HandlerCallbackActivity.class));
+        items.add(new activityList(MessengerOnewayActivity.class.getSimpleName(),MessengerOnewayActivity.class));
         adapter.notifyDataSetChanged();
     }
 }

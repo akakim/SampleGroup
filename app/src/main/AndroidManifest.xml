@@ -132,7 +132,7 @@
         <activity android:name=".samples.InspectorSamples.RecyclerViewActivity" />
         <activity android:name=".bitmapsSVGAnim.useableProgressActivity" />
         <activity android:name=".webview.javaScriptSampleActivity" />
-        <activity android:name=".samples.LambdaExpressionActivity"></activity>
+        <activity android:name=".samples.LambdaExpressionActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -141,8 +141,12 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_files"/>
+                android:resource="@xml/provider_files" />
         </provider>
+
+        <activity android:name=".samples.EfficientAndroidTreadEx.EfficientListActivity" />
+        <activity android:name=".samples.EfficientAndroidTreadEx.LooperActivity" />
+        <activity android:name=".samples.EfficientAndroidTreadEx.HandlerExampleActivity"></activity>
     </application>
 
 </manifest>

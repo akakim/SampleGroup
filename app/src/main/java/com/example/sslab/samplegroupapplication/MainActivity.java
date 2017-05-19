@@ -23,6 +23,7 @@ import com.example.sslab.samplegroupapplication.common.*;
 import com.example.sslab.samplegroupapplication.data.activityList;
 import com.example.sslab.samplegroupapplication.imageFileView.ModeSettingActivity;
 import com.example.sslab.samplegroupapplication.samples.*;
+import com.example.sslab.samplegroupapplication.samples.EfficientAndroidTreadEx.EfficientListActivity;
 import com.example.sslab.samplegroupapplication.samples.InspectorSamples.InspectorSampleListApp;
 import com.example.sslab.samplegroupapplication.webview.*;
 import com.example.sslab.samplegroupapplication.widget.CustomListView;
@@ -130,6 +131,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
         items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
         items.add(new activityList(LambdaExpressionActivity.class.getSimpleName() , LambdaExpressionActivity.class ));
+        items.add(new activityList(EfficientListActivity.class.getSimpleName() , EfficientListActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override

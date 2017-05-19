@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sslab.samplegroupapplication.samples.EfficientAndroidTreadEx.LooperActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/testButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newThreadButton"
+        android:layout_toRightOf="@id/testButton"
+        android:layout_marginLeft="10dp"/>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/testButton"
+        >
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteY="40dp"
+            android:layout_marginLeft="148dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+<!--            app:srcCompat="@drawable/apple_logo_vector_morphable"-->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="143dp"
+            android:layout_height="139dp"
+            android:src="@drawable/alarm_icon_a"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="177dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="86dp"
+            tools:layout_editor_absoluteX="73dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>

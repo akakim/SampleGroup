@@ -148,7 +148,10 @@
         <activity android:name=".samples.EfficientAndroidTreadEx.LooperActivity" />
         <activity android:name=".samples.EfficientAndroidTreadEx.HandlerExampleActivity" />
         <activity android:name=".samples.EfficientAndroidTreadEx.HandlerCallbackActivity" />
-        <activity android:name=".samples.EfficientAndroidTreadEx.MessengerOnewayActivity"></activity>
+        <activity android:name=".samples.EfficientAndroidTreadEx.MessengerOnewayActivity" />
+        <activity android:name=".samples.EfficientAndroidTreadEx.SharedPreferencesActivity" />
+        <activity android:name=".samples.EfficientAndroidTreadEx.ThreadRetainActivity" />
+        <activity android:name=".samples.EfficientAndroidTreadEx.ThreadRetainWithFragmentActivity"></activity>
     </application>
 
 </manifest>

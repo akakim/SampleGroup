@@ -130,6 +130,12 @@ dependencies {
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile 'com.intuit.sdp:sdp-android:1.0.3'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.mcxiaoke.volley:library:1.0.18'
+
+    compile 'com.fasterxml.jackson.core:jackson-core:2.8.1'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.1'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.1'
+
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.0'
 }

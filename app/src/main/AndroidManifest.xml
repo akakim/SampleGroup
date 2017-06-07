@@ -151,7 +151,9 @@
         <activity android:name=".samples.EfficientAndroidTreadEx.MessengerOnewayActivity" />
         <activity android:name=".samples.EfficientAndroidTreadEx.SharedPreferencesActivity" />
         <activity android:name=".samples.EfficientAndroidTreadEx.ThreadRetainActivity" />
-        <activity android:name=".samples.EfficientAndroidTreadEx.ThreadRetainWithFragmentActivity"></activity>
+        <activity android:name=".samples.EfficientAndroidTreadEx.ThreadRetainWithFragmentActivity" />
+        <activity android:name=".openfireSample.OpenfireClientActivity" />
+        <activity android:name=".samples.EfficientAndroidTreadEx.ChainedNetworkActivity"></activity>
     </application>
 
 </manifest>

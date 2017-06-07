@@ -7,14 +7,18 @@ import android.os.Message;
 import android.os.Process;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.R;
 
-public class SharedPreferencesActivity extends AppCompatActivity {
+public class SharedPreferencesActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView mTextValue = null;
-
+    Button updateButton = null;
+    Button readButton = null;
     // UI 스레드에 대한 핸들러 . 백그라운드
     private Handler mUiHandler = new Handler(){
         @Override
@@ -31,15 +35,32 @@ public class SharedPreferencesActivity extends AppCompatActivity {
     private int mCount;
     private SharedPreferencesThread sharedPreferencesThread;
 
-    private TextView resultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shared_preferences);
-        resultTextView = ( TextView ) findViewById( R.id.resultTextView );
-        sharedPreferencesThread = new SharedPreferencesThread();
+        mTextValue = ( TextView ) findViewById( R.id.resultTextView );
+        updateButton = ( Button ) findViewById( R.id.updateButton );
+        readButton = ( Button ) findViewById( R.id.readButton );
 
+        updateButton.setOnClickListener( this );
+        readButton.setOnClickListener( this );
+        sharedPreferencesThread = new SharedPreferencesThread();
+        sharedPreferencesThread.start();
+        mCount = 0;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.updateButton:
+                sharedPreferencesThread.write(mCount++);
+                break;
+            case R.id.readButton:
+                sharedPreferencesThread.read();
+                break;
+        }
     }
 
 
@@ -78,6 +99,7 @@ public class SharedPreferencesActivity extends AppCompatActivity {
                        case WRITE:
                             SharedPreferences.Editor editor = mPrefs.edit();
                            editor.putInt(KEY,(Integer)msg.obj );
+                           Toast.makeText(getApplicationContext(),"Key put in sharedPreference",Toast.LENGTH_SHORT).show();
                            editor.commit();
                            break;
                    }
@@ -90,7 +112,7 @@ public class SharedPreferencesActivity extends AppCompatActivity {
         }
 
         public void write(int i){
-            mHandler.sendEmptyMessage(WRITE);
+            mHandler.sendMessage( Message.obtain(Message.obtain(mHandler,WRITE,i)) );
         }
 
         @Override

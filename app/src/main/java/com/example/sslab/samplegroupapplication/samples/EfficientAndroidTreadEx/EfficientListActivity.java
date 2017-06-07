@@ -42,6 +42,7 @@ public class EfficientListActivity extends AppCompatActivity {
         items.add(new activityList(ThreadRetainActivity.class.getSimpleName(),ThreadRetainActivity.class));         // 스레드의상태를 유지해주는 예제
         items.add(new activityList(ThreadRetainWithFragmentActivity.class.getSimpleName(),ThreadRetainWithFragmentActivity.class));         // 스레드의상태를 유지해주는 예제
         items.add(new activityList(SharedPreferencesActivity.class.getSimpleName(),SharedPreferencesActivity.class));         // 스레드의상태를 유지해주는 예제
+        items.add(new activityList(ChainedNetworkActivity.class.getSimpleName(),ChainedNetworkActivity.class));         // 네트워크 시나리오 셈플
         adapter.notifyDataSetChanged();
     }
 }

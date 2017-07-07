@@ -134,6 +134,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(LambdaExpressionActivity.class.getSimpleName() , LambdaExpressionActivity.class ));
         items.add(new activityList(EfficientListActivity.class.getSimpleName() , EfficientListActivity.class ));
         items.add(new activityList(OpenfireClientActivity.class.getSimpleName() , OpenfireClientActivity.class ));
+        items.add(new activityList(CustomWidgetListActivity.class.getSimpleName() , CustomWidgetListActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override

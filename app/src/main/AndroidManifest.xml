@@ -153,7 +153,10 @@
         <activity android:name=".samples.EfficientAndroidTreadEx.ThreadRetainActivity" />
         <activity android:name=".samples.EfficientAndroidTreadEx.ThreadRetainWithFragmentActivity" />
         <activity android:name=".openfireSample.OpenfireClientActivity" />
-        <activity android:name=".samples.EfficientAndroidTreadEx.ChainedNetworkActivity"></activity>
+        <activity android:name=".samples.EfficientAndroidTreadEx.ChainedNetworkActivity" />
+        <activity android:name=".samples.customWidget.CoordinatorCustomWidgetActivity" />
+        <activity android:name=".samples.CustomWidgetListActivity" />
+        <activity android:name=".samples.customWidget.CoodinatorLayoutSampleActivity"></activity>
     </application>
 
 </manifest>

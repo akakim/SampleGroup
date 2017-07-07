@@ -38,11 +38,12 @@ public class EfficientListActivity extends AppCompatActivity {
         items.add(new activityList(LooperActivity.class.getSimpleName(),LooperActivity.class));                         // 작업자 스레드를 발생시켜서
         items.add(new activityList(HandlerExampleActivity.class.getSimpleName(),HandlerExampleActivity.class));
         items.add(new activityList(HandlerCallbackActivity.class.getSimpleName(),HandlerCallbackActivity.class));
-        items.add(new activityList(MessengerOnewayActivity.class.getSimpleName(),MessengerOnewayActivity.class));       //
+        items.add(new activityList(MessengerOnewayActivity.class.getSimpleName(),MessengerOnewayActivity.class));       // 서비스를 이용한 주건희 받건희
         items.add(new activityList(ThreadRetainActivity.class.getSimpleName(),ThreadRetainActivity.class));         // 스레드의상태를 유지해주는 예제
         items.add(new activityList(ThreadRetainWithFragmentActivity.class.getSimpleName(),ThreadRetainWithFragmentActivity.class));         // 스레드의상태를 유지해주는 예제
         items.add(new activityList(SharedPreferencesActivity.class.getSimpleName(),SharedPreferencesActivity.class));         // 스레드의상태를 유지해주는 예제
         items.add(new activityList(ChainedNetworkActivity.class.getSimpleName(),ChainedNetworkActivity.class));         // 네트워크 시나리오 셈플
+
         adapter.notifyDataSetChanged();
     }
 }

@@ -3,12 +3,17 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <CheckedTextView
+    <!--<CheckedTextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/CheckedTextView"-->
+        <!--android:checkMark="@null"-->
+        <!--android:drawableLeft="@drawable/selector_check_round_btn"-->
+        <!--android:drawableRight="@null"-->
+        <!--/>-->
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/CheckedTextView"
-        android:checkMark="@null"
-        android:drawableLeft="@drawable/selector_check_round_btn"
-        android:drawableRight="@null"
-        />
+        android:id="@+id/textView1"/>
 </LinearLayout>

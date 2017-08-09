@@ -34,7 +34,7 @@ public class ActivityViewListAdapter extends ArrayAdapter<activityList> {
             v = LayoutInflater.from(getContext()).inflate( R.layout.listview_check_activity_item,null);
         }
         final activityList item = ( activityList )getItem(position);
-        final CheckedTextView textView = (CheckedTextView)v.findViewById(R.id.CheckedTextView);
+        final TextView textView = (TextView)v.findViewById(R.id.textView1);
 //        textView.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

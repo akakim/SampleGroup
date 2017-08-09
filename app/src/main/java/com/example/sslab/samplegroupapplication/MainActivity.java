@@ -26,6 +26,7 @@ import com.example.sslab.samplegroupapplication.openfireSample.OpenfireClientAct
 import com.example.sslab.samplegroupapplication.samples.*;
 import com.example.sslab.samplegroupapplication.samples.EfficientAndroidTreadEx.EfficientListActivity;
 import com.example.sslab.samplegroupapplication.samples.InspectorSamples.InspectorSampleListApp;
+import com.example.sslab.samplegroupapplication.samples.mvp.MvpMainActivity;
 import com.example.sslab.samplegroupapplication.webview.*;
 import com.example.sslab.samplegroupapplication.widget.CustomListView;
 import com.example.sslab.samplegroupapplication.widget.CustomTextView;
@@ -59,46 +60,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         listView = (CustomListView) findViewById(R.id.list);
 
-
-//        String token = FirebaseInstanceId.getInstance().getToken();
-//        if(token == null){
-//            token = "token is null";
-//        }
-//        Log.d("onCreateToken",token);
-//        timer = new Timer();
-//        TimerTask task = new TimerTask() {
-//            @Override
-//            public void run() {
-//                if(SharedManager.getString(MainActivity.this, Constants.FCM_TOKEN).length() > 0 ){
-//                    handler.sendEmptyMessage( 0 );
-//                    timer.cancel();
-//                }
-//            }
-//        };
-//        timer.schedule( task,0,100);
-
-        // searchSample 실패 .. ㅠ
-//        searchEditText = (EditText) findViewById(R.id.searchEditText);
-//        searchEditText.setFocusable(false);
-//        searchEditText.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                MainActivity.this.adapter.getFilter().filter(charSequence);
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//
-//            }
-//        });
-//        mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-//        FirebaseMessagingServiceSample.h = this.handler;
-//        Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(mUncaughtExceptionHandler,this));
 
 
         items.add(new activityList(ThreadMessageQueueSample.class.getSimpleName(), ThreadMessageQueueSample.class));                    // 스레드와 큐.. 즉, 동기화된 네트워크 통신을 하고싶었다.
@@ -135,6 +96,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(EfficientListActivity.class.getSimpleName() , EfficientListActivity.class ));
         items.add(new activityList(OpenfireClientActivity.class.getSimpleName() , OpenfireClientActivity.class ));
         items.add(new activityList(CustomWidgetListActivity.class.getSimpleName() , CustomWidgetListActivity.class ));
+        items.add(new activityList(MvpMainActivity.class.getSimpleName() , MvpMainActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override
@@ -164,6 +126,7 @@ public class MainActivity extends BaseActivity {
                 Intent intent = new Intent(getApplicationContext(),item.getaClass());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+//                overridePendingTransition(R.anim.anim_slide_in_bottom,R.anim.anim_slide_out_top);
             }
         });
 
@@ -196,9 +159,6 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
 
     }
-
-
-
 
 
     @Override

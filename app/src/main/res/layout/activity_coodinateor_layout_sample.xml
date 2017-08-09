@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sslab.samplegroupapplication.samples.customWidget.CoodinatorLayoutSampleActivity">
 
-
-    <com.example.sslab.samplegroupapplication.widget.HeaderLayout
-        android:id="@+id/header_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_behavior="com.example.sslab.samplegroupapplication.samples.customWidget.HeaderScrollBehavior">
-
-        <TextView
-            android:id="@+id/text_view"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="start|center_vertical"
-            android:textSize="20dp"
-            android:text="@string/app_name"/>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"/>
-
-
-    </com.example.sslab.samplegroupapplication.widget.HeaderLayout>
-
-    <!-- Contents...-->
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="com.example.sslab.samplegroupapplication.samples.customWidget.ContentsLayoutBehavior">
-    </android.support.v4.view.ViewPager>
+        android:id="@+id/mainLayout">
 
-</android.support.design.widget.CoordinatorLayout>
+        <com.example.sslab.samplegroupapplication.widget.HeaderLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_behavior="com.example.sslab.samplegroupapplication.samples.customWidget.HeaderScrollBehavior">
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="start|center_vertical"
+                android:textSize="20dp"
+                android:text="@string/app_name"/>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"/>
+
+        </com.example.sslab.samplegroupapplication.widget.HeaderLayout>
+
+        <!-- Contents...-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.example.sslab.samplegroupapplication.samples.customWidget.ContentsLayoutBehavior">
+        </android.support.v4.view.ViewPager>
+
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

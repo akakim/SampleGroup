@@ -22,7 +22,7 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true        // SVG 서포팅 라이브러리를 사용하기 위함.
-
+        multiDexEnabled true
 //        jackOptions {
 //            enabled false
 //        }

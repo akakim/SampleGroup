@@ -3,7 +3,7 @@ package com.example.sslab.samplegroupapplication.samples.mvp;
 import java.util.List;
 
 /**
- * Created by SSLAB on 2017-08-09.
+ *
  */
 
 public class MainPresenterImpl implements MainPresenter,FindItemsInteractor.OnFinishedListener{

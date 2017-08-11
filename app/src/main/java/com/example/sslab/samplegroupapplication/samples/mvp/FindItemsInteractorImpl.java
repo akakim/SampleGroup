@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by SSLAB on 2017-08-09.
+ * view와 직접 상호작용하는 애
  */
 
 public class FindItemsInteractorImpl implements FindItemsInteractor {

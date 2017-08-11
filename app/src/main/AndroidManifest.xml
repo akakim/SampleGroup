@@ -166,9 +166,21 @@
         <activity android:name=".samples.customWidget.DoubleNestedScrollViewSampleActivity" />
         <activity android:name=".samples.customWidget.CustomProgressDialogTestActivity" />
         <activity android:name=".samples.mvp.MvpMainActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+        <!--<activity-->
+            <!--android:name=".LoginActivity"-->
+            <!--android:label="@string/title_activity_login" />-->
+        <activity android:name=".samples.mvp.MvpLoginActivity" />
+        <activity android:name=".samples.GetIntentActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="com.example.sslab.samplegroupapplication"
+                    android:scheme="tripath" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

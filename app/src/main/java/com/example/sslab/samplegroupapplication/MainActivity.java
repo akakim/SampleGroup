@@ -26,6 +26,7 @@ import com.example.sslab.samplegroupapplication.openfireSample.OpenfireClientAct
 import com.example.sslab.samplegroupapplication.samples.*;
 import com.example.sslab.samplegroupapplication.samples.EfficientAndroidTreadEx.EfficientListActivity;
 import com.example.sslab.samplegroupapplication.samples.InspectorSamples.InspectorSampleListApp;
+import com.example.sslab.samplegroupapplication.samples.mvp.MvpLoginActivity;
 import com.example.sslab.samplegroupapplication.samples.mvp.MvpMainActivity;
 import com.example.sslab.samplegroupapplication.webview.*;
 import com.example.sslab.samplegroupapplication.widget.CustomListView;
@@ -97,6 +98,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(OpenfireClientActivity.class.getSimpleName() , OpenfireClientActivity.class ));
         items.add(new activityList(CustomWidgetListActivity.class.getSimpleName() , CustomWidgetListActivity.class ));
         items.add(new activityList(MvpMainActivity.class.getSimpleName() , MvpMainActivity.class ));
+        items.add(new activityList(MvpLoginActivity.class.getSimpleName() , MvpLoginActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override

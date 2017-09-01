@@ -26,6 +26,23 @@
             android:id="@+id/hashText"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:src="@drawable/share_bitmap"
+        android:layout_below="@id/topLayout"
+        android:id="@+id/shareBitmap"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/kakaoSDKShareButton"
+        android:layout_below="@id/shareBitmap"
+        android:text="sendKakaoSDK"
+        />
     <com.kakao.usermgmt.LoginButton
         android:id="@+id/com_kakao_login"
         android:layout_alignParentBottom="true"

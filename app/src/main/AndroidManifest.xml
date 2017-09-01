@@ -38,6 +38,10 @@
             android:name="io.fabric.ApiKey"
             android:value="c34004616c9989d5a6769716e715aa0c9ee96d8c" />
 
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider373214696394354" />
+
         <activity android:name=".samples.ThreadMessageQueueSample" />
         <activity android:name=".samples.Sample02Activity" />
         <activity android:name=".samples.CustomTextViewActivity" />
@@ -166,21 +170,24 @@
         <activity android:name=".samples.customWidget.DoubleNestedScrollViewSampleActivity" />
         <activity android:name=".samples.customWidget.CustomProgressDialogTestActivity" />
         <activity android:name=".samples.mvp.MvpMainActivity" />
-        <!--<activity-->
-            <!--android:name=".LoginActivity"-->
-            <!--android:label="@string/title_activity_login" />-->
+        <!-- <activity -->
+        <!-- android:name=".LoginActivity" -->
+        <!-- android:label="@string/title_activity_login" /> -->
         <activity android:name=".samples.mvp.MvpLoginActivity" />
         <activity android:name=".samples.GetIntentActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="com.example.sslab.samplegroupapplication"
                     android:scheme="tripath" />
             </intent-filter>
         </activity>
+        <activity android:name=".samples.customWidget.CustomEditTextGroupActivity" />
+        <activity android:name=".SNSSamples.MarketPlaceActivity"></activity>
     </application>
 
 </manifest>

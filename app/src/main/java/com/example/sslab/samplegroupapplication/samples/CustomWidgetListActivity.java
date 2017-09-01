@@ -13,6 +13,7 @@ import com.example.sslab.samplegroupapplication.data.activityList;
 import com.example.sslab.samplegroupapplication.samples.customWidget.CoodinatorLayoutSampleActivity;
 import com.example.sslab.samplegroupapplication.samples.customWidget.CoordinatorCustomWidgetActivity;
 import com.example.sslab.samplegroupapplication.samples.customWidget.CoordinatorExamples;
+import com.example.sslab.samplegroupapplication.samples.customWidget.CustomEditTextGroupActivity;
 import com.example.sslab.samplegroupapplication.samples.customWidget.CustomProgressDialogTestActivity;
 import com.example.sslab.samplegroupapplication.widget.CustomListView;
 
@@ -34,6 +35,7 @@ public class CustomWidgetListActivity extends AppCompatActivity implements ListV
         items.add(new activityList(CoodinatorLayoutSampleActivity.class.getSimpleName() , CoodinatorLayoutSampleActivity.class ));
         items.add(new activityList(CoordinatorExamples.class.getSimpleName(),CoordinatorExamples.class));
         items.add(new activityList(CustomProgressDialogTestActivity.class.getSimpleName(),CustomProgressDialogTestActivity.class));
+        items.add(new activityList(CustomEditTextGroupActivity.class.getSimpleName(),CustomEditTextGroupActivity.class));
 
         // now let's getting start CoodinatorLayout
         adapter = new ActivityViewListAdapter(this, -1, items);

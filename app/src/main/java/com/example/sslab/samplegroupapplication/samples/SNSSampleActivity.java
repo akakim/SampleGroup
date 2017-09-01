@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import com.example.sslab.samplegroupapplication.R;
 import com.example.sslab.samplegroupapplication.SNSSamples.FacebookActivity;
+import com.example.sslab.samplegroupapplication.SNSSamples.MarketPlaceActivity;
 import com.example.sslab.samplegroupapplication.adapter.ListViewAdapter;
 import com.example.sslab.samplegroupapplication.data.activityList;
 import com.example.sslab.samplegroupapplication.SNSSamples.KakaoLoginSample;
@@ -30,8 +31,11 @@ public class SNSSampleActivity extends AppCompatActivity {
 
         items.add(new activityList(KakaoLoginSample.class.getSimpleName(),KakaoLoginSample.class));
         items.add(new activityList(FacebookActivity.class.getSimpleName(),FacebookActivity.class));
-        items.add(new activityList(KakaoLoginSample.class.getSimpleName(),KakaoLoginSample.class));
-        items.add(new activityList(KakaoLoginSample.class.getSimpleName(),KakaoLoginSample.class));
+        items.add(new activityList(MarketPlaceActivity.class.getSimpleName(),MarketPlaceActivity.class));
+
+
+//        items.add(new activityList(KakaoLoginSample.class.getSimpleName(),KakaoLoginSample.class));
+//        items.add(new activityList(KakaoLoginSample.class.getSimpleName(),KakaoLoginSample.class));
 
 
         adapter = new ListViewAdapter(this,android.R.layout.simple_list_item_1,items );

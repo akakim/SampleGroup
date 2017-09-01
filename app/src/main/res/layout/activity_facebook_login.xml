@@ -10,9 +10,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sslab.samplegroupapplication.SNSSamples.FacebookActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SNS FacebookSample "
+        android:id="@+id/sampleFacebook"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/sampleFacebook"
+        android:src="@drawable/share_bitmap"
+        android:id="@+id/shareBitmapImageView"
+        />
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/shareContent"
+        android:layout_alignParentBottom="true"
+        android:text="show Content "
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/showGallery"
+        android:layout_above="@id/shareContent"
+        android:text="shareContent "/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sampleImageView"
+        android:layout_above="@id/showGallery"
+        android:src="@drawable/progress_dark"/>
 </RelativeLayout>

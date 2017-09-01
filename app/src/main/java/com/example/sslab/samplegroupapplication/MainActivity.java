@@ -63,11 +63,11 @@ public class MainActivity extends BaseActivity {
 
 
 
-        items.add(new activityList(ThreadMessageQueueSample.class.getSimpleName(), ThreadMessageQueueSample.class));                    // 스레드와 큐.. 즉, 동기화된 네트워크 통신을 하고싶었다.
-        items.add(new activityList(Sample02Activity.class.getSimpleName(), Sample02Activity.class));                                    // 간단한 버튼 이나, 커스터마이징 뷰목록들
-        items.add(new activityList(CustomTextViewActivity.class.getSimpleName(),CustomTextViewActivity.class));                         // 간단한 버튼 이나, 커스터마이징 뷰목록들
-        items.add(new activityList(GridViewSample.class.getSimpleName(),GridViewSample.class));                                         //  그리드 뷰 셈플
-        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),BitmapSamplesActivity.class));
+        items.add(new activityList(ThreadMessageQueueSample.class.getSimpleName(),  ThreadMessageQueueSample.class));                    // 스레드와 큐.. 즉, 동기화된 네트워크 통신을 하고싶었다.
+        items.add(new activityList(Sample02Activity.class.getSimpleName(),          Sample02Activity.class));                                    // 간단한 버튼 이나, 커스터마이징 뷰목록들
+        items.add(new activityList(CustomTextViewActivity.class.getSimpleName(),    CustomTextViewActivity.class));                         // 간단한 버튼 이나, 커스터마이징 뷰목록들
+        items.add(new activityList(GridViewSample.class.getSimpleName(),            GridViewSample.class));                                         //  그리드 뷰 셈플
+        items.add(new activityList(BitmapSamplesActivity.class.getSimpleName(),     BitmapSamplesActivity.class));
         /*
          * listview의 크기를 측정하는 로직이 들어갔다.
          *  listview가 ScrollView안에 들어가지않는다면 필요가 없다.
@@ -77,28 +77,28 @@ public class MainActivity extends BaseActivity {
          * 위와 마찬가지이다.
          */
 
-        items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(),ScrollViewInsideListViewAcitivity.class));
-        items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),ExpandableListViewSampleActivity.class));     // expandable list view 의 샘플 .
-        items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),SwipeRefreshBottomLayoutActivity.class));     // swipe 이벤트가 발생하면
-        items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
-        items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
+        items.add(new activityList(ScrollViewInsideListViewAcitivity.class.getSimpleName(), ScrollViewInsideListViewAcitivity.class));
+        items.add(new activityList(ExpandableListViewSampleActivity.class.getSimpleName(),  ExpandableListViewSampleActivity.class));     // expandable list view 의 샘플 .
+        items.add(new activityList(SwipeRefreshBottomLayoutActivity.class.getSimpleName(),  SwipeRefreshBottomLayoutActivity.class));     // swipe 이벤트가 발생하면
+        items.add(new activityList(FocusingSampleActivity.class.getSimpleName(),    FocusingSampleActivity.class));                         // requestLayout을 응용한 focusing 기능, 또한 , VISIBILITY를
+        items.add(new activityList(FocusingLinearActivity.class.getSimpleName(),    FocusingLinearActivity.class));                         // LinearLayout일지라도 requestLayout이될 것인가.
         items.add(new activityList(URLConnectionSampleActivity.class.getSimpleName(),URLConnectionSampleActivity.class));               // 새로운 네트워크모듈을 생성
-        items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),DialogSamplesActivity.class));                           // 새로운 네트워크모듈을 생성
-        items.add(new activityList(AnimationActivity.class.getSimpleName(),AnimationActivity.class));                                   // 새로운 네트워크모듈을 생성
-        items.add(new activityList(DilatingDotActivity.class.getSimpleName(),DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
-        items.add(new activityList(SNSSampleActivity.class.getSimpleName(),SNSSampleActivity.class));
-        items.add(new activityList(SVGSampleActivity.class.getSimpleName(),SVGSampleActivity.class));
-        items.add(new activityList(WebViewActivity.class.getSimpleName() , WebViewActivity.class ));
+        items.add(new activityList(DialogSamplesActivity.class.getSimpleName(),     DialogSamplesActivity.class));                           // 새로운 네트워크모듈을 생성
+        items.add(new activityList(AnimationActivity.class.getSimpleName(),         AnimationActivity.class));                                   // 새로운 네트워크모듈을 생성
+        items.add(new activityList(DilatingDotActivity.class.getSimpleName(),       DilatingDotActivity.class));                               // 새로운 네트워크모듈을 생성
+        items.add(new activityList(SNSSampleActivity.class.getSimpleName(),         SNSSampleActivity.class));                              // SNS 샘플들 .
+        items.add(new activityList(SVGSampleActivity.class.getSimpleName(),         SVGSampleActivity.class));
+        items.add(new activityList(WebViewActivity.class.getSimpleName() ,          WebViewActivity.class ));
         items.add(new activityList(WebViewSampleGroupActivity.class.getSimpleName() , WebViewSampleGroupActivity.class ));
-        items.add(new activityList(ModeSettingActivity.class.getSimpleName() , ModeSettingActivity.class ));
-        items.add(new activityList(TabOrderringSample.class.getSimpleName() , TabOrderringSample.class ));
-        items.add(new activityList(InspectorSampleListApp.class.getSimpleName() , InspectorSampleListApp.class ));
+        items.add(new activityList(ModeSettingActivity.class.getSimpleName() ,      ModeSettingActivity.class ));
+        items.add(new activityList(TabOrderringSample.class.getSimpleName() ,       TabOrderringSample.class ));
+        items.add(new activityList(InspectorSampleListApp.class.getSimpleName() ,   InspectorSampleListApp.class ));
         items.add(new activityList(LambdaExpressionActivity.class.getSimpleName() , LambdaExpressionActivity.class ));
-        items.add(new activityList(EfficientListActivity.class.getSimpleName() , EfficientListActivity.class ));
-        items.add(new activityList(OpenfireClientActivity.class.getSimpleName() , OpenfireClientActivity.class ));
+        items.add(new activityList(EfficientListActivity.class.getSimpleName() ,    EfficientListActivity.class ));
+        items.add(new activityList(OpenfireClientActivity.class.getSimpleName() ,   OpenfireClientActivity.class ));
         items.add(new activityList(CustomWidgetListActivity.class.getSimpleName() , CustomWidgetListActivity.class ));
-        items.add(new activityList(MvpMainActivity.class.getSimpleName() , MvpMainActivity.class ));
-        items.add(new activityList(MvpLoginActivity.class.getSimpleName() , MvpLoginActivity.class ));
+        items.add(new activityList(MvpMainActivity.class.getSimpleName() ,          MvpMainActivity.class ));
+        items.add(new activityList(MvpLoginActivity.class.getSimpleName() ,         MvpLoginActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override

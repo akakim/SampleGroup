@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:keepScreenOn="true"
+    android:orientation="horizontal"
+    tools:context="com.example.sslab.samplegroupapplication.bitmap.CliedenTestActivity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/loBot"
+        android:layout_toLeftOf="@+id/loButton"
+        >
+
+
+        <ImageView
+            android:layout_width="556px"
+            android:layout_height="721px"
+            android:layout_centerInParent="true"
+            android:src="@drawable/img_face_guide"
+            android:id="@+id/mainMask"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="30px">
+            <ImageView
+                android:layout_width="696px"
+                android:layout_height="62px"
+                android:src="@drawable/guide_01" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="368px"
+            android:layout_height="114px"
+            android:src="@drawable/acv_take_pic_info_01"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/takPicInfo"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/loBot"
+        android:layout_width="match_parent"
+        android:layout_height="256px"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/loButton"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            >
+            <ImageView
+                android:layout_width="1339px"
+                android:layout_height="84px"
+                android:src="@drawable/acv_take_pic_bottom_txt"
+                android:layout_margin="40dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/shadow_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shadow_right"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="330px"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginEnd="140px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true">
+
+        <com.example.sslab.samplegroupapplication.widget.ButtonTextImg
+            android:layout_width="330px"
+            android:layout_height="300px"
+            app:anim_img="true"
+            app:img_size="323px"
+            app:src="@drawable/btn_camera_notification"
+            app:text=""
+            app:text_color="#fff"
+            app:text_size="@dimen/_7sdp"
+            android:layout_marginTop="280px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/loButton"
+        android:layout_width="240px"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <com.example.sslab.samplegroupapplication.widget.ButtonTextImg
+                android:id="@+id/btnTakePic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:anim_img="true"
+                app:img_size="158px"
+                app:src="@drawable/btn_camera"
+                app:text="사진촬영"
+                app:text_color="#fff"
+                app:text_size="@dimen/_7sdp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/shadow_height"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shadow_bottom"
+                />
+        </RelativeLayout>
+
+
+        <!--<com.example.sslab.samplegroupapplication.widget.ButtonTextImg-->
+            <!--android:id="@+id/btnBack"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="256px"-->
+            <!--android:background="@drawable/btn_home_bg"-->
+            <!--app:img_size="100px"-->
+            <!--app:orientation="vertical"-->
+            <!--app:src="@drawable/btn_home"-->
+            <!--app:text="홈"-->
+            <!--app:text_color="#fff"-->
+            <!--app:text_size="@dimen/_7sdp"-->
+            <!--/>-->
+    </LinearLayout>
+</RelativeLayout>

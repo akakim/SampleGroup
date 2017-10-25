@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication.bitmapsSVGAnim;
+package com.example.sslab.samplegroupapplication.bitmap;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

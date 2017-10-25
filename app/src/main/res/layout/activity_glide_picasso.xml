@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sslab.samplegroupapplication.bitmap.GlidePicassoActivity">
+
+
+    <ImageView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/glideImage"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/glideImage"
+        android:id="@+id/glideInfo"
+        tools:text="Glide Image "
+        android:visibility="gone"/>
+
+
+    <ImageView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/picassoImage"
+        android:layout_below="@id/glideImage"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/picassoImage"
+        android:layout_below="@id/glideImage"
+        android:id="@+id/picassoInfo"
+        tools:text="picasso Image "/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/picassoImage"
+        android:id="@+id/simpleList">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

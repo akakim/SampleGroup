@@ -72,6 +72,7 @@ ext {
 repositories {
     maven { url 'https://maven.fabric.io/public' }
     maven { url 'http://dl.bintray.com/optimizely/optimizely' }
+    maven { url 'https://maven.google.com' }
 }
 
 dependencies {
@@ -111,7 +112,6 @@ dependencies {
 
 
 
-
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:gridlayout-v7:25.1.1'
     compile 'com.android.support:appcompat-v7:25.1.1'
@@ -139,11 +139,14 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-core:2.8.1'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.1'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.1'
-
     compile 'com.kakao.sdk:kakaolink:1.5.1'
-
+    compile 'com.github.bumptech.glide:glide:4.1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton:butterknife:+'
     testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:+'
 }
 
 apply plugin: 'com.google.gms.google-services'

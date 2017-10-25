@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.adapter.ActivityViewListAdapter;
+import com.example.sslab.samplegroupapplication.bitmap.GlidePicassoActivity;
 import com.example.sslab.samplegroupapplication.common.*;
 import com.example.sslab.samplegroupapplication.data.activityList;
 import com.example.sslab.samplegroupapplication.imageFileView.ModeSettingActivity;
@@ -99,6 +100,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(CustomWidgetListActivity.class.getSimpleName() , CustomWidgetListActivity.class ));
         items.add(new activityList(MvpMainActivity.class.getSimpleName() ,          MvpMainActivity.class ));
         items.add(new activityList(MvpLoginActivity.class.getSimpleName() ,         MvpLoginActivity.class ));
+        items.add(new activityList(GlidePicassoActivity.class.getSimpleName() ,         GlidePicassoActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override

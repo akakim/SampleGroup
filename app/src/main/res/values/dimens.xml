@@ -7,4 +7,17 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+
+    <!--
+
+    -->
+
+    <integer name="dlg_progress_duration">110</integer>
+    <dimen name="shadow_width">@dimen/_4sdp</dimen>
+    <dimen name="shadow_height">@dimen/_4sdp</dimen>
+    <dimen name="btn_share_img_size">@dimen/_25sdp</dimen>
+    <dimen name="btn_share_text_size">@dimen/_7sdp</dimen>
+    <dimen name="btn_share_text_margin">@dimen/_3sdp</dimen>
+    <dimen name="dlg_title_text_size">@dimen/_12sdp</dimen>
+
 </resources>

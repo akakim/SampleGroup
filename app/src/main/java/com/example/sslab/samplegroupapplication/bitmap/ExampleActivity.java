@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication.bitmapsSVGAnim;
+package com.example.sslab.samplegroupapplication.bitmap;
 
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.sslab.samplegroupapplication.R;
 

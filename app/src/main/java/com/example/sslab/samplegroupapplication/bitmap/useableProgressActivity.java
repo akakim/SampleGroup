@@ -1,8 +1,7 @@
-package com.example.sslab.samplegroupapplication.bitmapsSVGAnim;
+package com.example.sslab.samplegroupapplication.bitmap;
 
 import android.graphics.Bitmap;
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,8 +9,6 @@ import android.widget.LinearLayout;
 
 import com.example.sslab.samplegroupapplication.R;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class useableProgressActivity extends AppCompatActivity implements WorkerThread.Callback {

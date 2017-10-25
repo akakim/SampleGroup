@@ -4,7 +4,7 @@
     android:id="@+id/activity_useable_progress"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sslab.samplegroupapplication.bitmapsSVGAnim.useableProgressActivity">
+    tools:context="com.example.sslab.samplegroupapplication.bitmap.useableProgressActivity">
 
 
     <ProgressBar

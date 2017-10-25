@@ -2,7 +2,6 @@ package com.example.sslab.samplegroupapplication.samples.InspectorSamples;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
@@ -14,22 +13,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidquery.AQuery;
 import com.example.sslab.samplegroupapplication.R;
-import com.example.sslab.samplegroupapplication.bitmapsSVGAnim.ExampleActivity;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URI;
 
 public class GetGalleryActivity extends AppCompatActivity implements View.OnClickListener {
 

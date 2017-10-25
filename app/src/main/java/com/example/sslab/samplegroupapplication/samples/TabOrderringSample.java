@@ -35,6 +35,7 @@ public class TabOrderringSample extends AppCompatActivity implements View.OnFocu
 EditText.OnEditorActionListener{
     Bundle saveInstance = new Bundle();
     EditText firstNumber ;
+    EditText nameValue ;
     EditText secondNumber ;
     EditText thirdNumber ;
     GridLayout gridLayout;
@@ -49,9 +50,12 @@ EditText.OnEditorActionListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_orderring_sample);
         firstNumber = ( EditText ) findViewById( R.id.firstNumber );
+        nameValue = ( EditText ) findViewById( R.id.nameValue );
         secondNumber = ( EditText ) findViewById( R.id.secondNumber );
         thirdNumber = ( EditText ) findViewById( R.id.lastNumber );
 
+
+        nameValue.setOnFocusChangeListener( this );
         nextActivity = ( Button ) findViewById( R.id.nextActivity);
         nextActivity.setOnClickListener( new OnClickListener(){
 
@@ -67,6 +71,24 @@ EditText.OnEditorActionListener{
 
         for( int i =0;i<gridLayout.getChildCount();i++){
             gridLayout.getChildAt(i).setId(i);
+//            if( i <=1){
+//                final EditText editText = (EditText) gridLayout.getChildAt(i);
+//
+//                editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//                    @Override
+//                    public void onFocusChange(View v, boolean hasFocus) {
+//                        if (hasFocus){
+//                            Log.d(getClass().getSimpleName(),"FOOOOOO");
+//                        }else {
+//                            if( !"".equals(editText.getText().toString())) {
+//                                editText.setText(editText.getText().toString().trim());
+//                            }
+//                            Log.d(getClass().getSimpleName(),"NOT FOOOOOPOOOOOOOOOOO");
+//
+//                        }
+//                    }
+//                });
+//            }
         }
 
         firstNumber.setOnFocusChangeListener( this );
@@ -189,6 +211,18 @@ EditText.OnEditorActionListener{
 
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
+
+        switch ( v.getId() ){
+            case R.id.nameValue:
+
+                if(hasFocus){
+                    Log.d("nameValue","has Focuse .... " ) ;
+                }else {
+                    nameValue.setText( nameValue.getText().toString().trim());
+                    Log.d("nameValue","has not Focuse .... " ) ;
+                }
+                break;
+        }
         if ( hasFocus ) {
             switch (v.getId()) {
                 case R.id.firstNumber:

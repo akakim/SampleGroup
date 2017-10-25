@@ -62,7 +62,7 @@
 
         <activity android:name=".samples.DisplayBitmapActivity" />
         <activity android:name=".samples.BitmapSamplesActivity" />
-        <activity android:name=".bitmapsSVGAnim.BitmapAsynchTaskActivity" />
+        <activity android:name=".bitmap.BitmapAsynchTaskActivity" />
         <activity android:name=".samples.SwipeRefreshBottomLayoutActivity" />
         <activity android:name=".samples.AcvImgExplorer" />
         <activity android:name=".samples.SampleUpdatedActivity" />
@@ -87,21 +87,21 @@
         <activity android:name=".SNSSamples.GoogleLoginSampleActivity" />
         <activity android:name=".SNSSamples.FacebookActivity" />
         <activity android:name=".samples.DaggerSample" />
-        <activity android:name=".bitmapsSVGAnim.GalleryAndViewPagerActivity" />
+        <activity android:name=".bitmap.GalleryAndViewPagerActivity" />
         <activity
-            android:name=".bitmapsSVGAnim.ViewPagerActivity"
+            android:name=".bitmap.ViewPagerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".bitmapsSVGAnim.ExampleActivity" />
-        <activity android:name=".bitmapsSVGAnim.ExampleCompositeActivity" />
-        <activity android:name=".bitmapsSVGAnim.FillInHeartActivity" />
-        <activity android:name=".bitmapsSVGAnim.AnimatedSVGActivity" />
+        <activity android:name=".bitmap.ExampleActivity" />
+        <activity android:name=".bitmap.ExampleCompositeActivity" />
+        <activity android:name=".bitmap.FillInHeartActivity" />
+        <activity android:name=".bitmap.AnimatedSVGActivity" />
         <activity android:name=".samples.WebViewActivity" />
         <activity
             android:name=".webview.WebViewVideoSample"
             android:label="@string/title_activity_web_view_video_sample"
             android:theme="@style/NoActionBar" />
         <activity android:name=".webview.WebViewSampleGroupActivity" />
-        <activity android:name=".bitmapsSVGAnim.AndToAppleIconActivity" />
+        <activity android:name=".bitmap.AndToAppleIconActivity" />
         <activity android:name=".imageFileView.ModeSettingActivity" />
         <activity android:name=".imageFileView.FileShowActivity" />
         <activity android:name=".imageFileView.GalleryActivity" />
@@ -134,7 +134,7 @@
         <activity android:name=".samples.InspectorSamples.AnswersActivity" />
         <activity android:name=".samples.InspectorSamples.SyncUserDataActivity" />
         <activity android:name=".samples.InspectorSamples.RecyclerViewActivity" />
-        <activity android:name=".bitmapsSVGAnim.useableProgressActivity" />
+        <activity android:name=".bitmap.useableProgressActivity" />
         <activity android:name=".webview.javaScriptSampleActivity" />
         <activity android:name=".samples.LambdaExpressionActivity" />
 
@@ -187,7 +187,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".samples.customWidget.CustomEditTextGroupActivity" />
-        <activity android:name=".SNSSamples.MarketPlaceActivity"></activity>
+        <activity android:name=".SNSSamples.MarketPlaceActivity" />
+        <activity android:name=".bitmap.GlidePicassoActivity" />
+        <activity android:name=".bitmap.CliedenTestActivity"></activity>
     </application>
 
 </manifest>

@@ -12,8 +12,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.sslab.samplegroupapplication.bitmapsSVGAnim.WorkerThread;
-
 
 /**
  * 시뮬레이션과같은 예제인데 생각만큼 돌아가진않는다....

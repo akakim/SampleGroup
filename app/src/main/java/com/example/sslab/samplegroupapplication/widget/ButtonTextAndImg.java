@@ -31,44 +31,45 @@ public class ButtonTextAndImg extends LinearLayout {
 		aq = new AQuery( context );
 		img = ( ImageView ) findViewById( R.id.img );
 		text = ( TextView ) findViewById( R.id.text );
-		TypedArray array = context.getTheme().obtainStyledAttributes( attrs, R.styleable.ButtonTextAndImg, 0, 0 );
-		try {
-			aq.id( img ).image( array.getDrawable( R.styleable.ButtonTextAndImg_src ) );
-		} catch ( Exception e ) {
-		}
-		try {
-			float imgSize = array.getDimension( R.styleable.ButtonTextAndImg_img_size, 10 );
-			aq.id( img ).height( ( int ) imgSize, false ).width( ( int ) imgSize, false );
-		} catch ( Exception e ) {
-		}
-		try {
-			String str = array.getString( R.styleable.ButtonTextAndImg_text );
-			if ( str == null || str.length() == 0 ) {
-				text.setVisibility( GONE );
-			} else {
-				text.setVisibility( VISIBLE );
-				text.setText( str );
-			}
-		} catch ( Exception e ) {
-		}
-		try {
-			float textSize = array.getDimension( R.styleable.ButtonTextAndImg_text_size, 10 );
-			text.setTextSize( TypedValue.COMPLEX_UNIT_PX, textSize );
-		} catch ( Exception e ) {
+//		TypedArray array = context.getTheme().obtainStyledAttributes( attrs, R.styleable.ButtonTextAndImg, 0, 0 );
+//		try {
+//			aq.id( img ).image( array.getDrawable( R.styleable.ButtonTextAndImg_src ) );
 
-		}
-		try {
-			float textMargin = array.getDimension( R.styleable.ButtonTextAndImg_text_margin, 10 );
-			text.setPadding( ( int ) textMargin, 0, 0, 0 );
-		} catch ( Exception e ) {
-
-		}
-		try {
-			int textColor = array.getColor( R.styleable.ButtonTextAndImg_text_color, Color.WHITE );
-			text.setTextColor( textColor );
-		} catch ( Exception e ) {
-
-		}
+//		} catch ( Exception e ) {
+//		}
+//		try {
+//			float imgSize = array.getDimension( R.styleable.ButtonTextAndImg_img_size, 10 );
+//			aq.id( img ).height( ( int ) imgSize, false ).width( ( int ) imgSize, false );
+//		} catch ( Exception e ) {
+//		}
+//		try {
+//			String str = array.getString( R.styleable.ButtonTextAndImg_text );
+//			if ( str == null || str.length() == 0 ) {
+//				text.setVisibility( GONE );
+//			} else {
+//				text.setVisibility( VISIBLE );
+//				text.setText( str );
+//			}
+//		} catch ( Exception e ) {
+//		}
+//		try {
+//			float textSize = array.getDimension( R.styleable.ButtonTextAndImg_text_size, 10 );
+//			text.setTextSize( TypedValue.COMPLEX_UNIT_PX, textSize );
+//		} catch ( Exception e ) {
+//
+//		}
+//		try {
+//			float textMargin = array.getDimension( R.styleable.ButtonTextAndImg_text_margin, 10 );
+//			text.setPadding( ( int ) textMargin, 0, 0, 0 );
+//		} catch ( Exception e ) {
+//
+//		}
+//		try {
+//			int textColor = array.getColor( R.styleable.ButtonTextAndImg_text_color, Color.WHITE );
+//			text.setTextColor( textColor );
+//		} catch ( Exception e ) {
+//
+//		}
 	}
 
 	private void setButtonBg() {

@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="ButtonTextImg">
+        <!--<attr name="orientation" format="enum">-->
+            <!--<enum name="vertical" value="0"/>-->
+            <!--<enum name="horizontal" value="1"/>-->
+        <!--</attr>-->
+        <attr name="src" format="reference"/>
+        <attr name="img_size" format="dimension"/>
+        <attr name="anim_img" format="boolean"/>
+        <attr name="text" format="string"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_margin" format="dimension"/>
+        <attr name="text_style" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="bold" value="1"/>
+            <enum name="semi_bold" value="2"/>
+        </attr>
+        <attr name="max_text_lines" format="integer"/>
+    </declare-styleable>
+
+
+
     <declare-styleable name="DilatingDotsProgressBar">
         <attr name="android:radius" />
         <attr name="android:color" />
@@ -19,14 +42,14 @@
         <attr name="kakao_titleTextColor" format="reference"/>
     </declare-styleable>
 
-    <declare-styleable name = "ButtonTextAndImg">
-        <attr name = "src" format = "reference"/>
-        <attr name = "img_size" format = "dimension"/>
-        <attr name = "text" format = "string"/>
-        <attr name = "text_size" format = "dimension"/>
-        <attr name = "text_margin" format = "dimension"/>
-        <attr name = "text_color" format = "color"/>
-    </declare-styleable>
+    <!--<declare-styleable name = "ButtonTextAndImg">-->
+        <!--<attr name = "src" format = "reference"/>-->
+        <!--<attr name = "img_size" format = "dimension"/>-->
+        <!--<attr name = "text" format = "string"/>-->
+        <!--<attr name = "text_size" format = "dimension"/>-->
+        <!--<attr name = "text_margin" format = "dimension"/>-->
+        <!--<attr name = "text_color" format = "color"/>-->
+    <!--</declare-styleable>-->
 
     <declare-styleable name="AnimatedSVGView">
         <attr name="animatedSvgImageSizeX" format="integer"/>

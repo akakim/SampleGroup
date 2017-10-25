@@ -1,4 +1,4 @@
-package com.example.sslab.samplegroupapplication.bitmapsSVGAnim;
+package com.example.sslab.samplegroupapplication.bitmap;
 
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;

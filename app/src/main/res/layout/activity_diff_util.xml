@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#e1e1e1"
+    android:columnCount="3">
+
+
+    <TextView
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:text="서버에서 불러올 이미지 "
+        android:layout_columnSpan="1"
+        android:gravity="center_vertical"
+        android:id="@+id/tvLoadingServer"/>
+
+    <ImageView
+        android:layout_height="@dimen/_100sdp"
+        android:id="@+id/ivFromServer"
+        tools:src="@drawable/ani_18"
+        android:layout_columnSpan="2"
+        />
+
+    <TextView
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:text="로컬에서 불러올 이미지 "
+        android:layout_columnSpan="1"
+        android:id="@+id/tvLoadingLocal"/>
+
+    <ImageView
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:id="@+id/ivFromLocal"
+        tools:src="@drawable/ani_18"
+        android:layout_columnSpan="2"
+        />
+
+
+    <TextView
+    android:layout_width="@dimen/_70sdp"
+    android:layout_height="@dimen/_100sdp"
+    android:text="로컬 DB 에서 불러올 이미지 "
+    android:layout_columnSpan="1"
+    android:id="@+id/tvLocalDB"/>
+
+    <ImageView
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:id="@+id/ivFromDB"
+        tools:src="@drawable/ani_18"
+        android:layout_columnSpan="2"
+        />
+
+
+</GridLayout>

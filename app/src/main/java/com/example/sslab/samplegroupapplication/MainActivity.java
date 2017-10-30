@@ -101,6 +101,7 @@ public class MainActivity extends BaseActivity {
         items.add(new activityList(MvpMainActivity.class.getSimpleName() ,          MvpMainActivity.class ));
         items.add(new activityList(MvpLoginActivity.class.getSimpleName() ,         MvpLoginActivity.class ));
         items.add(new activityList(GlidePicassoActivity.class.getSimpleName() ,         GlidePicassoActivity.class ));
+        items.add(new activityList(DiffUtilActivity.class.getSimpleName() ,         DiffUtilActivity.class ));
 
 //        handler.postDelayed(new Runnable() {
 //            @Override

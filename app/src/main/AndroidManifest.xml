@@ -190,6 +190,7 @@
         <activity android:name=".SNSSamples.MarketPlaceActivity" />
         <activity android:name=".bitmap.GlidePicassoActivity" />
         <activity android:name=".bitmap.CliedenTestActivity"></activity>
+        <activity android:name=".samples.DiffUtilActivity"></activity>
     </application>
 
 </manifest>
